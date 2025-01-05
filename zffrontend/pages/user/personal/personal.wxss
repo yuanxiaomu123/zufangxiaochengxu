@@ -1,0 +1,105 @@
+Page {
+  background: #f4f2f2;
+  width: 100%;
+  font-size: 16px;
+}
+.body-content {
+    background: #fff;
+    border-top: 1px solid #cbcbcb;
+    padding-top: 4px;
+}
+.save-list {
+    display: flex;
+	flex-wrap: nowrap;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    position: relative;
+}
+.save-list .cover {
+    position: absolute;
+    z-index: 66;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.save-list .title {
+    min-width: 80px;
+    font-size: 14px;
+}
+.save-list .logo {
+    width: 100%;
+    text-align: right;
+    margin-right: 14px;
+}
+.save-list .logo .img {
+    width: 70px;
+    height: 70px;
+    border-radius: 45px;
+}
+.save-list .logo .logo-txt {
+    font-size: 40px;
+    color: #999;
+}
+.save-list .icon-link {
+    color: #e2e2e6;
+}
+
+.save-list .input {
+    width: 100%;
+    border: none;
+}
+
+.fixed-bg {
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+}
+.fixed-photo {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    height: 120px;
+}
+.fixed-photo .photo {
+    display: block;
+    margin: 10px 12px;
+    line-height: 36px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+.fixed-photo .photo .icon {
+    font-size: 24px;
+    position: relative;
+    top: 4px;
+    line-height: 36px;
+    height: 36px;
+    color: #999;
+}
+.fixed-photo .photo .txt {
+    font-size: 13px;
+    padding-left: 10px;
+    color: #666;
+}
+
+button[type="primary"] {
+    display: block;
+    background-color:#0092d8;
+    margin: 10px 10px;
+    line-height: 36px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}

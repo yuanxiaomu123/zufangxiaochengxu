@@ -1,0 +1,52 @@
+<view class="type-page">
+    <view class="section-title">有房出租</view>
+    <view class="type-list">
+        <view bindtap="selectType" class="type-item" data-type="整租">
+            <view class="left">
+                <view class="title">整租</view>
+                <view class="desc">
+                    整套房子出租
+                </view>
+            </view>
+            <view class="right">
+                <i class="wuju icon-fabu-zhengzu zhengzu"></i>
+            </view>
+        </view>
+        <view bindtap="selectType" class="type-item" data-type="合租">
+            <view class="left">
+                <view class="title">合租</view>
+                <view class="desc">
+                    单间/床位出租
+                </view>
+            </view>
+            <view class="right">
+                <i class="wuju icon-fabu-hezu hezu"></i>
+            </view>
+        </view>
+    </view>
+    <view class="section-title">无房求租</view>
+    <view class="type-list">
+        <view bindtap="selectType1" class="type-item" data-type="求整租">
+            <view class="left">
+                <view class="title">求整租</view>
+                <view class="desc">
+                    求租整套房子
+                </view>
+            </view>
+            <view class="right">
+                <i class="wuju icon-fabu-qiuzhengzu qiuzhengzu"></i>
+            </view>
+        </view>
+        <view bindtap="selectType1" class="type-item" data-type="求合租">
+            <view class="left">
+                <view class="title">求合租</view>
+                <view class="desc">
+                    求租单间/床位
+                </view>
+            </view>
+            <view class="right">
+                <i class="wuju icon-fabu-qiuhezu qiuhezu"></i>
+            </view>
+        </view>
+    </view>
+</view>

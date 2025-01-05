@@ -1,0 +1,156 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+<view class="{{ loadingHide ? 'loading-hide' : '' }}">
+    <view class="container" id="wrap">
+    <view class="house-info">
+        <view class="common-info">
+            <view class="title">{{show.rentType}} · {{show.districtName}}<text wx:if="{{show.houseInfo}}"> · {{show.houseInfo}}</text>
+            </view>
+            <view class="tag-list" wx:if="{{show.houseTags}}">
+                <view class="tag-item" style="background:#DBEDED;color:#659393;" wx:if="{{show.houseType}}">{{show.houseType}}</view>
+                <view class="tag-item" wx:for="{{show.houseTags}}" wx:key="{{index}}">{{item}}</view>
+            </view>
+            <view class="house-title" wx:if="{{show.title}}">
+        “{{show.title}}”
+      </view>
+            <view class="info-list">
+                <view class="info-item">
+                    <view class="info-title">
+                        <text wx:if="{{show.isRoomy}}">预算</text>
+                        <text wx:if="{{!show.isRoomy}}">租金</text>
+                    </view>
+                    <view class="info-value">{{show.price}}元/月</view>
+                </view>
+                <view class="info-item" wx:if="{{show.checkInDate}}">
+                    <view class="info-title">入住时间</view>
+                    <view class="info-value">{{show.checkInDate||'随时入住'}}</view>
+                </view>
+                <view class="info-item">
+                    <view class="info-title">性别限制</view>
+                    <view class="info-value">{{show.genderLimit||'不限男女'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="part-info">
+            <view class="info-title">
+                <text wx:if="{{!show.isRoomy}}">房源描述</text>
+                <text wx:if="{{show.isRoomy}}">求租者说</text>
+            </view>
+            <view class="info-content">
+                <view bindtap="viewUser" class="user-info" wx:if="{{show.userAge}}">
+                    <image class="avatar" src="{{show.userAvatarUrl}}"></image>
+                    <view style="flex:auto;">
+                        <view class="username">
+                            <text class="overflow-hidden">{{show.userNickName}}</text>
+                            <i class="wuju icon-nan" wx:if="{{show.userGender=='男'}}"></i>
+                            <i class="wuju icon-nv" wx:if="{{show.userGender=='女'}}"></i>
+                        </view>
+                        <view class="usertag">
+              {{show.userAge}} · {{show.userJob}}
+            </view>
+                    </view>
+                    <view class="time">
+            {{refreshedAt}}更新
+          </view>
+                </view>
+                <view class="house-desc" wx:if="{{!show.isRoomy}}">{{show.houseDesc||'想了解房源详细信息可以联系我哦~'}}</view>
+                <view class="house-desc" wx:if="{{show.isRoomy}}">{{show.houseDesc||'想了解具体租房需求可以联系我哦~'}}</view>
+            </view>
+        </view>
+        <view class="part-info">
+            <view class="info-title">
+                <text>位置信息</text>
+            </view>
+            <view class="info-content">
+                <image bindtap="viewMap" class="house-map" src="{{houseMapImg}}"></image>
+            </view>
+        </view>
+        <view class="part-info">
+            <view class="info-title">
+                <text>温馨提示</text>
+            </view>
+            <view class="info-content">
+                <view class="tip-list">
+                    <view>
+            1. 异性合租需谨慎，夜间看房请找亲友陪同
+          </view>
+                    <view>
+            2. 没完成合同前，不要交任何费用
+          </view>
+                    <view>
+            3. 谨防以搬贴为名的推广人员，避免隐私泄露
+          </view>
+                    <view>
+            4. 发现房源虚假或用户骚扰情况，<text bindtap="report" class="report-text">请举报</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="place-holder"></view>
+    <view class="footer">
+        <view class="action collect-wrapper">
+            <view class="action-text">
+                <i class="wuju icon-dibubiaoqianlan-shouye"></i>
+                <view>首页</view>
+            </view>
+            <form reportSubmit bindsubmit="formSubmit">
+                <button plain class="collect-btn" data-click="backHome" formType="submit" hoverClass="none">
+          首页
+        </button>
+            </form>
+        </view>
+        <view class="action collect-wrapper">
+            <view class="action-text">
+                <i class="wuju icon-dibubiaoqianlan-shoucang" wx:if="{{!goodsOn}}"></i>
+                <i class="wuju icon-xiangqing-yishoucang" style="color:#FFCF54;" wx:if="{{goodsOn}}"></i>
+                <view>收藏</view>
+            </view>
+            <form reportSubmit bindsubmit="formSubmit">
+                <button class="collect-btn" data-click="toggleLike" formType="submit" plain="plain">
+          收藏
+        </button>
+            </form>
+        </view>
+        <view class="action collect-wrapper">
+            <view class="action-text">
+                <i class="wuju icon-haibao1"></i>
+                <view>海报</view>
+            </view>
+            <form reportSubmit bindsubmit="formSubmit">
+                <button plain class="collect-btn" data-click="createHaibao" formType="submit" hoverClass="none">
+          海报
+        </button>
+            </form>
+        </view>
+        <view class="action collect-wrapper">
+            <view class="action-text">
+                <i class="wuju icon-xiangqingye-zhuanfa"></i>
+                <view>转发</view>
+            </view>
+            <form reportSubmit bindsubmit="formSubmit">
+                <button class="collect-btn" formType="submit" hoverClass="none" openType="share">
+          转发
+        </button>
+            </form>
+        </view>
+        <view class="btn contact-wrapper collect-wrapper" wx:if="{{!isSelf&&!isFromNotify}}">
+      联系Ta
+      <form reportSubmit bindsubmit="formSubmit">
+                <button plain class="collect-btn" data-click="contact" formType="submit" hoverClass="none">
+          联系Ta
+        </button>
+            </form>
+        </view>
+        <view class="btn contact-wrapper collect-wrapper" wx:if="{{isSelf||isFromNotify}}">
+      管理
+      <form reportSubmit bindsubmit="formSubmit">
+                <button plain class="collect-btn" data-click="showActions" formType="submit" hoverClass="none">
+          管理
+        </button>
+            </form>
+        </view>
+    </view>
+    </view>
+    <include src="../../footer.wxml"/>
+</view>

@@ -1,0 +1,21 @@
+page {
+    background: #fff;
+}
+
+.desc-tip {
+    padding: 10rpx 50rpx;
+    color: #F5D075;
+    font-size: 26rpx;
+}
+
+.desc-input {
+    width: auto;
+    height: 16rem;
+    background: #fff;
+    margin: 0 30rpx;
+    padding: 10rpx 10rpx;
+    border-radius: 10rpx;
+    font-size: 30rpx;
+    color: #323232;
+    line-height: 1.5;
+}

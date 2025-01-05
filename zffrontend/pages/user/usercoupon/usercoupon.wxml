@@ -1,0 +1,40 @@
+<view class="container" id="wrap">
+    <view class="coupon-link">
+        <navigator url="../coupon/coupon">
+            <text class="coupon iconfont icon-coupons"></text>
+            <text class="txt">领取优惠券</text>
+        </navigator>
+    </view>
+    <view wx:if="{{isShow}}">
+        <block wx:for="{{coupon}}" wx:for-item="val" wx:key="id">
+            <view class="coupon-list">
+                <view class="coupon-left">
+                    <text class="price-text">满减券</text>
+                    <text class="price">¥{{val.price}}</text>
+                </view>
+                <view class="coupon-right">
+                    <text class="text">+ 满{{val.full_price}}元可用</text>
+                    <text class="text">+ 有效期{{val.start_time}}至{{val.end_time}}</text>
+                </view>
+            </view>
+            <view class="coupon-receive">
+                <view class="coupon-title">{{val.title}}</view>
+                <view wx:if="{{val.status == 0}}">
+                    <view class="receive" data-id="{{val.id}}" >未使用</view>
+                </view>
+                <view wx:elif="{{val.status == 1}}" class="back-fff">
+                    <view class="is-use">已使用</view>
+                </view>
+                <view wx:else class="back-fff">
+                    <view class="is-use">已过期</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view wx:else>
+        <view class="cart-bg">
+            <text class="iconfont icon-coupons"></text>
+        </view>
+        <view class="cart-title">亲，您暂时没有领取优惠券！</view>
+    </view>
+</view>

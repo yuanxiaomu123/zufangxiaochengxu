@@ -1,0 +1,34 @@
+<block wx:for="{{houseData}}" wx:key="id">
+  <navigator url="../news/show/show?id={{item.id}}">
+    <view class="roomy-item collect-wrapper">
+        <view class="header-info">
+            <view class="user">
+                <image class="left" src="http://localhost/zufangdm/template/default/images/tt.png"></image>
+                <view class="right">
+                    <view class="name">
+                        <text>张三</text>
+                        <i class="wuju icon-nan"></i>
+                    </view>
+                </view>
+            </view>
+            <view class="price">
+          {{item.price}}元/月
+        </view>
+        </view>
+        <view class="addr-info">
+        {{item.title}}
+        </view>
+        <view class="tag-list">
+            <view class="tag-item">
+          {{item.timeline}}入住
+        </view>
+            <view class="tag-item">
+          限女生
+        </view>
+        </view>
+        <view class="desc-info">
+        {{item.content}}
+      </view>
+    </view>
+  </navigator>
+</block>

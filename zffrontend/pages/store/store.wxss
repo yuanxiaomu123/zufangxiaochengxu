@@ -1,0 +1,92 @@
+.container {
+    padding: 0 12px;
+}
+.header {
+    border-bottom: 1px dotted #e5e5e5;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+}
+.top-title {
+    width: 100%;
+}
+
+.top-title .title {
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.top-title text {
+    color: #c4c4c4;
+}
+
+.logo {
+    width: 80px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.logo .img {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+
+.common {
+    padding: 6px;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.common .title {
+    display: block;
+    padding: 0 30px 0 5px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.common .icons {
+    color: #e2e2e6;
+    width: 30px;
+    min-width: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.icon-link {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 0;
+    top: 12px;
+    color: #e2e2e6;
+}
+
+.srote-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+.srote-list .img {
+    display: block;
+    width: 33.3%;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.srote-list .img image {
+    width: 100%;
+    height: 100px;
+}
+
+.srote-txt {
+    color: #999;
+    font-size: 14px;
+    padding: 10px 0 0 15px;
+}

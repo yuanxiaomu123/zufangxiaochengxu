@@ -1,0 +1,63 @@
+<view class="container {{ loadingHide ? 'loading-hide' : '' }}" id="wrap">
+<!--    <view wx:if="{{isAuth}}">-->
+        <view>
+        <view class="top">
+            <navigator class="header" url="../personal/personal">
+                <view wx:if="{{users.img}}">
+                    <image src="{{users.img}}" class="logo-image" />
+                </view>
+                <view wx:else>
+                    <text class="logo-txt iconfont icon-img"></text>
+                </view>
+                <view>
+                    <text class="logo-title top-title">{{users.name}}</text>
+                </view>
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+            </navigator> 
+            <view class="integral">
+                <span class="integral-txt">积分：{{users.integral}}</span>
+                <view class="sign-cont" wx:if="{{ users.sign > 0 }}">
+                    <button wx:if="{{ users.is_sign > 0 }}" class="send-sign no-sign">已签到</button>
+                    <button wx:else class="send-sign" bindtap="sendSign">签到送积分</button>
+                    <text class="jifen {{jifen == 1 ? 'show-jifen' : ''}}">+ {{ sign }} 积分</text>
+                </view>
+            </view>
+        </view>
+         
+        <view class="user-link">
+            <navigator url="../order/list/list">
+                <text class="order pre iconfont icon-dingdan"></text>
+                <text class="txt">我发布的</text>
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+            </navigator>
+            <navigator url="../cart/cart" open-type="switchTab">
+                <text class="cart pre iconfont icon-shangchengxitongtubiaozitihuayuanwenjian68"></text>
+                <text class="txt">我联系的</text>
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+            </navigator>
+            <navigator url="../usercoupon/usercoupon">
+                <text class="coupon pre iconfont icon-coupons"></text>
+                <text class="txt">我浏览的</text>
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+            </navigator>
+            <navigator url="../../like/index" open-type="switchTab">
+                <text class="goods pre iconfont icon-shoucang"></text>
+                <text class="txt">我的收藏</text>
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+            </navigator>
+        </view>
+    </view>
+<!--    <view wx:else>-->
+<!--        <navigator url="../auth/auth">-->
+<!--            <view class="header">-->
+<!--                <view>-->
+<!--                    <text class="logo-txt iconfont icon-img"></text>-->
+<!--                </view>-->
+<!--                <view>-->
+<!--                    <text class="logo-title no-title">未授权 / 登录 ></text>-->
+<!--                </view>-->
+<!--                <text class="icon-link iconfont icon-jiantouyou"></text>-->
+<!--            </view>-->
+<!--        </navigator>  -->
+<!--    </view>-->
+</view>

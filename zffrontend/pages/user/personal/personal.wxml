@@ -1,0 +1,62 @@
+<view class="container {{ loadingHide ? 'loading-hide' : '' }}" id="wrap">
+    <view wx:if="isShow" class="body-content">
+        <form bindsubmit="formSubmit">
+            <view class="save-list" bindtap="photoShow">
+                <view class="title">头像</view>
+                <view wx:if="{{userImg}}" class="logo">
+                    <image src="{{userImg}}" class="img" />
+                </view>
+                <view wx:else class="logo">
+                    <text class="logo-txt iconfont icon-img"></text>
+                </view>
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+            </view>
+            <view class="save-list">
+                <view class="title">昵称</view>
+                <input type="text" name="name" class="input" value="{{users.name}}" />
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+            </view>
+            <view class="save-list" bindtap="genderShow">
+                <view class="title">性别</view>
+                <input type="text" disabled="true" name="gender" class="input" value="{{userGender}}" />
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+                <text class="cover"></text>
+            </view>
+            <navigator url="../mobile/mobile?flag={{users.flag}}">
+                <view class="save-list">
+                    <view class="title">手机</view>
+                    <input type="text" name="tel" class="input" value="{{users.tel}}" />
+                    <text class="icon-link iconfont icon-jiantouyou"></text>
+                    <text class="cover"></text>
+                </view>
+            </navigator>
+            <button formType="submit" type="primary" class="send-btn">保存</button>
+        </form>
+    </view>
+    
+    <view wx:if="{{isPhoto}}">
+        <view class="fixed-bg" bindtap="photoCancel"></view>
+        <view class="fixed-photo">
+            <view class="photo" data-opt="album" bindtap="saveAvatar">
+                <text class="icon iconfont icon-xiangce"></text>
+                <text class="txt">从相册里选取图片</text>
+            </view>
+            <view class="photo" data-opt="camera" bindtap="saveAvatar">
+                <text class="icon iconfont icon-xiangji"></text>
+                <text class="txt">使用相机拍摄图片</text>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{isGender}}">
+        <view class="fixed-bg" bindtap="genderCancel"></view>
+        <view class="fixed-photo">
+            <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{Index}}" bindchange="changeGender">
+                <picker-view-column>
+                    <view wx:for="{{genders}}" wx:key="name" style="line-height: 50px">{{item}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+
+</view>

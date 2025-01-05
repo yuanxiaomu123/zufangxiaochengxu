@@ -1,0 +1,36 @@
+<view class="common-page city-page">
+    <view class="list-section flex-wrap">
+        <scroll-view class="flex-left" scrollIntoView="{{scrollIntoId}}" scrollY="true">
+            <view class="curr-section">
+                <view class="section-title">
+          当前定位
+        </view>
+                <view class="curr-loc">
+                    <view class="left">
+                        <i class="wuju icon-weizhi"></i>
+                        <text bindtap="selectLocCity" class="city" data-city="{{currCity}}">{{currCity}}</text>
+                    </view>
+                    <view class="right">
+                        <i class="wuju icon-xuanzechengshi-zhongxindingwei"></i>
+                        <text bindtap="reLoc" class="re-loc">重新定位</text>
+                    </view>
+                </view>
+            </view>
+            <view class="hot-section">
+                <view class="section-title">
+          热门城市
+        </view>
+                <view class="hot-list">
+                    <text bindtap="selectCity" data-city="{{item}}" wx:for="{{hotCitys}}" wx:key="{{index}}">{{item}}</text>
+                </view>
+            </view>
+            <view wx:for="{{groups}}" wx:for-item="zimu" wx:key="{{index}}">
+                <view class="item item-a" id="{{zimu.groupKey}}">{{zimu.groupName}}</view>
+                <view bindtap="handleTap" class="item" data-name="{{city}}" wx:for="{{zimu.cities}}" wx:for-item="city" wx:key="{{index}}">{{city}}</view>
+            </view>
+        </scroll-view>
+        <view bindtouchmove="touchmovefn" bindtouchstart="touchstartfn" class="zimulist">
+            <view class="zimu" data-id="{{item}}" wx:for="{{zimu}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,68 @@
+Page {
+  background: #fff;
+  width: 100%;
+  font-size: 12px;
+}
+.comment {
+    border-top: 8px solid #eee;
+}
+.comment-list {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 10px;
+    border-bottom: 8px solid #eee;
+    position: relative;
+}
+.comment-head {
+    width: 500px;
+    height: auto;
+    max-width: 50px;
+}
+.comment-list wx-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    max-width: 40px;
+    border-radius: 50%;
+    border-bottom: 1px solid #eee;
+}
+.comment-content {
+    flex: 1;
+}
+.comment-user {
+    position: relative;
+    padding-top: 4px;
+}
+.comment-user .user-name {
+    display: block;
+    padding-bottom: 2px;
+}
+.comment-user .iconfont {
+    font-size: 12px;
+    color: #ff0000;
+}
+.comment-text {
+    line-height: 24px;
+    padding: 8px 0;
+    color: #333;
+}
+.comment-time {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #999;
+}
+.recovery-head {
+    padding: 10px 0;
+    color: #f90;
+    display: block;
+    position: relative;
+    border-bottom: 1px dashed #eee;
+}
+.recovery-time {
+    position: absolute;
+    right: 0;
+    color: #999;
+    top: 10px;
+}

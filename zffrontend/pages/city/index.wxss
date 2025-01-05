@@ -1,0 +1,111 @@
+page {
+    background: #fff;
+}
+
+scroll-view {
+    height: calc(100vh);
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.common-page {
+    padding: 0;
+    padding-left: 30rpx;
+    font-size: 30rpx;
+    color: #323232;
+}
+
+.curr-loc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40rpx 0;
+}
+
+.curr-loc .left,.curr-loc .right {
+    display: flex;
+    align-items: center;
+}
+
+.left i.wuju {
+    margin-right: 10rpx;
+    color: #FFCF54;
+}
+
+.curr-loc .right {
+    margin-right: 60rpx;
+    color: #969696;
+    font-size: 30rpx;
+}
+
+.right i.wuju {
+    margin-right: 10rpx;
+}
+
+.hot-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30rpx;
+    padding-right: 40rpx;
+}
+
+.hot-list text {
+    margin: 20rpx;
+    width: 170rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border: 1rpx solid #E8E8E8;
+    border-radius: 20rpx;
+    text-align: center;
+    font-size: 32rpx;
+}
+
+.zimu {
+    width: 50rpx;
+    height: 20px;
+    line-height: 20px;
+    font-size: 24rpx;
+    color: #969696;
+}
+
+.zimulist {
+    position: fixed;
+    top: 40rpx;
+    right: 0;
+    bottom: 0;
+    width: 50rpx;
+    z-index: 999999999999;
+    background-color: #fff;
+    text-align: center;
+}
+
+.item {
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: solid 1rpx rgba(245,245,245,1);
+    padding-left: 20rpx;
+}
+
+.item-a {
+    background-color: rgba(245,245,245,1);
+}
+
+.flex-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.flex-left {
+    width: 700rpx;
+}
+
+.flex-right {
+    width: 50rpx;
+}

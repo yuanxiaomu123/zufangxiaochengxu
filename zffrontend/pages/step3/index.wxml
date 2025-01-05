@@ -1,0 +1,60 @@
+<view class="publish-page">
+    <form reportSubmit bindsubmit="formSubmit" class="publish-form">
+        <view class="section-title">
+      房源详情
+    </view>
+        <view bindtap="selectAddr" class="form-item">
+            <text class="label">位置</text>
+            <text class="value" wx:if="{{!districtName}}">请选择期望房源位置</text>
+            <text class="value has-value overflow-hidden" style="text-align:right;" wx:if="{{districtName}}">{{districtName}}</text>
+        </view>
+        <view class="form-item">
+            <text class="label">预算</text>
+            <input bindinput="inputPrice" class="value has-value" maxlength="5" name="price" placeholder="元/月" placeholderStyle="color:#646464;" type="number" value="{{price}}"></input>
+        </view>
+        <view class="form-item">
+            <text class="label">户型</text>
+            <picker bindchange="bindMultiPickerChange" mode="multiSelector" range="{{multiArray}}" value="{{multiIndex}}">
+                <view class="picker">
+                    <text class="value" wx:if="{{!houseInfo}}">几室几厅几卫</text>
+                    <text class="value has-value" wx:if="{{houseInfo}}">{{houseInfo}}</text>
+                </view>
+            </picker>
+        </view>
+        <view class="form-item">
+            <text class="label">性别要求</text>
+            <picker bindchange="bindPickerChange" range="{{genderArray}}" value="{{index}}">
+                <view class="picker">
+                    <text class="value" wx:if="{{!genderLimit}}">女/男</text>
+                    <text class="value has-value" wx:if="{{genderLimit}}">{{genderLimit}}</text>
+                </view>
+            </picker>
+        </view>
+        <view class="form-item">
+            <text class="label">入住时间</text>
+            <picker bindchange="bindDateChange" end="{{endDate}}" mode="date" start="{{startDate}}" value="{{checkInDate}}">
+                <view class="picker">
+                    <text class="value" wx:if="{{!checkInDate}}">请选择60天内</text>
+                    <text class="value has-value" wx:if="{{checkInDate}}">{{checkInDate}}</text>
+                </view>
+            </picker>
+        </view>
+        <view class="section-title">
+            <text>求租标题</text>
+            <text class="desc">（非必填）</text>
+        </view>
+        <view class="input-wrapper">
+            <input class="input-box has-value" maxlength="20" name="title" placeholder="简述下期望的房子特点吧~" placeholderStyle="color:#646464;"></input>
+        </view>
+        <view class="section-title" style="margin-top: 40rpx;">
+      补充说明<text class="desc">（非必填）</text>
+        </view>
+        <view bindtap="inputDesc" class="textarea-wrapper">
+            <text class="has-value" wx:if="{{houseDesc}}">{{houseDesc}}</text>
+            <text wx:if="{{!houseDesc}}">走心的文案将大大提高租房效率，请详细描述房源、室友、宠物等情况~</text>
+        </view>
+        <view class="common-footer">
+            <button class="common-btn" formType="submit">发布</button>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,41 @@
+<view class="container" id="wrap">
+    <view wx:if="{{isShow}}">
+        <view class="title">{{order.orders[0].title}}</view>
+        <view class="comment-order">
+            <image src="{{order.orders[0].img}}"></image>
+            <view class="comment-stars">
+                <view class="comment-text">评价</view>
+                <text data-stars="1" class="iconfont icon-shoucang1 {{change[1]}}" bindtap="starChange"></text>
+                <text data-stars="2" class="iconfont icon-shoucang1 {{change[2]}}" bindtap="starChange"></text>
+                <text data-stars="3" class="iconfont icon-shoucang1 {{change[3]}}" bindtap="starChange"></text>
+                <text data-stars="4" class="iconfont icon-shoucang1 {{change[4]}}" bindtap="starChange"></text>
+                <text data-stars="5" class="iconfont icon-shoucang1 {{change[5]}}" bindtap="starChange"></text>
+            </view>
+        </view>
+        <block wx:for="{{order.comments}}" wx:for-item="val" wx:key="id">
+            <view class="comment-list">
+                <text class="comment-message">{{val.message_content}}</text>
+                <view wx:if="{{val.recovery_content.length > 0}}">
+                    <view class="comment-message-recove">
+                        <text class="recovery-title">商家回复：</text>{{val.recovery_content}}
+                    </view>
+                </view>
+            </view>
+        </block>
+        <form bindsubmit="formSubmit" bindreset="formReset" id="comment">
+            <view class="section">
+                <textarea name="message_content" class="textarea" placeholder="请输入评价内容" />
+            </view>
+            <view class="btn-area">
+                <button formType="submit" type="primary">提交评论</button>
+            </view>
+        </form>
+    </view>
+    <view wx:else>
+        <view class="cart-bg">
+            <text class="iconfont icon-zanwudingdan"></text>
+        </view>
+        <view class="cart-title">亲，产品已下架，无法评价！</view>
+    </view>
+</view>
+

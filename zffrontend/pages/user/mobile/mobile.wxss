@@ -1,0 +1,56 @@
+Page {
+  background: #f4f2f2;
+  width: 100%;
+  font-size: 16px;
+}
+.body-content {
+    background: #fff;
+    border-top: 1px solid #cbcbcb;
+    padding-top: 4px;
+}
+.prompt {
+    text-align: right;
+    line-height: 20px;
+    color: #f7d809;
+    padding: 10px 10px 0 0;
+}
+.lists {
+    display: flex;
+	flex-wrap: nowrap;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    position: relative;
+}
+
+.lists .title {
+    min-width: 100px;
+    font-size: 14px;
+}
+
+.lists .input {
+    width: 100%;
+    border: none;
+    font-size: 14px;
+}
+
+.lists .send {
+    font-size: 12px;
+    margin: 0;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    min-width: 80px;
+}
+
+button[type="primary"] {
+    display: block;
+    background-color:#0092d8;
+    margin: 10px 10px;
+    line-height: 36px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}

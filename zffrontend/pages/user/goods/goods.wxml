@@ -1,0 +1,30 @@
+
+<view class="container" id="product-wrap">
+    <view wx:if="{{showOn}}">
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+        bindscrolltolower="updateList" bindscroll="scroll">
+            <view class="product-list">
+                <block wx:for="{{lists}}" wx:key="id">
+                    <view wx:if="{{item.id}}" class="list">
+                        <navigator url="../../product_show/product_show?id={{item.id}}">
+                            <view class="img"><image src="{{item.thumbfiles}}"></image></view>
+                            <view class="title">
+                                <view class="txt">{{item.title}}</view>
+                                <text class="price">￥{{item.price}}</text>
+                            </view>
+                        </navigator>
+                        <text data-id="{{item.id}}" bindtap="remove" class="remove iconfont icon-shanchu"></text>
+                    </view>
+                </block>
+            </view>
+            <view wx:if="{{!hasMore}}" class="noData"><text>没有更多内容了！</text></view>
+        </scroll-view>
+    </view>
+    <view wx:else>
+        <view class="cart-bg">
+            <text class="iconfont icon-appxiugaiicon62"></text>
+        </view>
+        <view class="cart-title">亲，您还没有收藏房源！</view>
+        <navigator url="../../index/index" class="link-home" open-type="switchTab">返回首页</navigator>
+    </view>  
+</view>

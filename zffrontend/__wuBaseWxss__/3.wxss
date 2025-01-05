@@ -1,0 +1,59 @@
+page {
+    background: #f5f5f5;
+}
+
+.common-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200rpx;
+}
+
+.common-wrapper {
+    margin: 10rpx 30rpx;
+    padding: 30rpx;
+    background: rgba(255,255,255,1);
+    box-shadow: 0px 3px 20px 0px rgba(102,204,153,0.1);
+    border-radius: 20px;
+    position: relative;
+}
+
+.common-wrapper .submit {
+    position: absolute;
+    bottom: -44rpx;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.common-wrapper button.btn {
+    display: inline-block;
+    background: linear-gradient(270deg,rgba(248,223,114,1) 0%,rgba(255,207,84,1) 100%);
+    box-shadow: 0px 5px 8px 0px rgba(102,204,153,0.1);
+    width: 258rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    box-shadow: 0px 5px 19px 1px rgba(102,204,153,0.1);
+    border-radius: 44rpx;
+    color: #fff;
+    border: none;
+    font-size: 32rpx;
+    color: #323232;
+}
+
+.common-header {
+    text-align: center;
+    border-bottom: 1rpx solid #E8E8E8;
+}
+
+.common-header image {
+    width: 84rpx;
+    height: 84rpx;
+    border-radius: 50%;
+}
+
+.common-header .title {
+    margin: 20rpx 0 30rpx;
+    color: #323232;
+}

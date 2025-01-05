@@ -1,0 +1,28 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+page {
+    background: #fff;
+}
+
+.textarea-wrapper {
+    min-height: 100rpx;
+    margin: 20rpx 0;
+    border: 1rpx solid #E8E8E8;
+    border-radius: 10rpx;
+    padding: 10rpx 20rpx;
+    font-size: 30rpx;
+    line-height: 1.75;
+    color: #969696;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.textarea-wrapper .has-value {
+    color: #323232;
+}
+
+.common-footer {
+    bottom: 40rpx;
+}

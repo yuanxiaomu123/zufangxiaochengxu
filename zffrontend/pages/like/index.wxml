@@ -1,0 +1,37 @@
+<view class="common-page">
+    <view class="house-list">
+        <view wx:if="{{lists}}" class="house-wrapper">
+            <block wx:for="{{lists}}" wx:key="id">
+                <navigator url="../product/show/show?id={{item.id}}">
+                    <view class="house-item">
+                        <view bindtap="viewDetail" class="house-content collect-wrapper" data-id="{{item.id}}">
+                            <view wx:if="{{item.thumbfiles}}" class="item-left">
+                                <image class="house-img" mode="aspectFill" src="{{item.thumbfiles}}"></image>
+                            </view>
+                            <view class="item-right">
+                                <view class="title overflow-hidden">
+                                    <text wx:if="{{item.houseType}}">{{item.houseType}} · </text>{{item.districtName}} · {{item.bedroom}}室
+                                </view>
+                                <view class="tag-list" wx:if="{{item.houseTags}}">
+                                    <view class="tag-item" wx:for="{{item.houseTags}}" wx:key="{{index}}">{{item}}</view>
+                                </view>
+                                <view class="addr overflow-hidden" wx:if="{{!item.districtName}}">
+                                {{item.districtName}}
+                                </view>
+                                <view class="footers">
+                                    <text class="price">{{item.price}}元/月</text>
+                                    <text class="time">16天前更新</text>
+                                </view>
+                            </view>
+                        </view>
+                        <slot></slot>
+                    </view>
+                </navigator>
+            </block>
+        </view>
+        <view class="default-empty" wx:if="{{!isFetching&&!lists.length}}">
+            <image alt="" src="../../assets/images/default-empty.png"></image>
+            <view>暂无推荐房源哦</view>
+        </view>
+    </view>
+</view>

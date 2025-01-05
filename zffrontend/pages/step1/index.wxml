@@ -1,0 +1,47 @@
+<view class="pub-page">
+    <form reportSubmit bindsubmit="goToNext" class="publish-form">
+        <view class="image-section">
+            <view class="image-desc">
+                <text>视频</text>
+                <text class="desc">（推荐上传，能被更多人浏览）</text>
+            </view>
+            <view class="img-list">
+                <view class="img-item" wx:if="{{videoPath}}">
+                    <video class="flex-img" src="{{videoPath}}"></video>
+                    <view class="icon-wrapper">
+                        <i bindtap="removeVideo" class="iconfont icon-close" data-img="{{videoPath}}"></i>
+                    </view>
+                </view>
+                <view bindtap="addVideo" class="add-wrapper flex-img" wx:if="{{!videoPath}}">
+                    <i class="wuju icon-jia add-icon"></i>
+                    <view>
+          添加视频
+        </view>
+                </view>
+            </view>
+        </view>
+        <view class="image-section">
+            <view class="image-desc">
+                <text>照片</text>
+                <text style="color:#F8DF72;">*</text>
+                <text class="desc">（请上传本人实拍图片，避免封号）</text>
+            </view>
+            <view class="img-list">
+                <view bindtap="viewImgs" class="img-item" wx:if="{{imgPaths.length}}">
+                    <image class="flex-img" mode="aspectFill" src="{{imgPaths[0]}}"></image>
+                    <text wx:if="{{!isUploading}}">{{imgPaths.length}}张</text>
+                    <text wx:if="{{isUploading}}">上传中...</text>
+                </view>
+                <view bindtap="addImage" class="add-wrapper flex-img">
+                    <i class="wuju icon-jia add-icon"></i>
+                    <view>
+          添加图片
+        </view>
+                </view>
+            </view>
+        </view>
+        <view class="common-footer">
+            <button class="common-btn" formType="submit">下一步</button>
+        </view>
+    </form>
+</view>

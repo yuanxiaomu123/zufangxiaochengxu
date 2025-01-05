@@ -1,0 +1,59 @@
+<view class="container" id="wrap">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="address-content">
+            <view class="section">
+                <view class="title">收货人：</view>
+                <input type="text" name="name" class="input" value="{{name}}" />
+            </view>
+            <view class="section">
+                <view class="title">手机号码：</view>
+                <input type="number" name="tel" class="input" value="{{tel}}" />
+            </view>
+            <view class="section" bindtap="saveCity">
+                <view class="title">所在地区：</view>
+                <input type="text" name="citys" class="input" value="{{citys}}" />
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+                <view class="mask"></view>
+            </view>
+            <view class="section">
+                <view class="title">详细地址：</view>
+                <input type="text" name="detailed" class="input" value="{{detailed}}" />
+            </view>
+            <view class="section">
+                <switch bindchange="switchChange" color="#0092d8" />
+                <text class="switch-txt">设为默认地址</text>
+            </view>
+        </view>
+        <button formType="submit" type="primary" class="send-btn">保存</button>
+    </form>
+
+    <view wx:if="{{isCity}}">
+        <view class="flex-box-bg" bindtap="cancel"></view>
+        <view class="flex-city">
+            <view class="flex-head">
+                <text class="cancel" bindtap="cancel">取消</text>
+                <view class="txt">{{province}} {{city}} {{area}}</view>
+                <text class="determine" bindtap="determine">确定</text>
+            </view>
+            <view class="flex-center">
+                <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{pIndex}}" bindchange="changeProvince2">
+                    <picker-view-column>
+                        <view wx:for="{{placeArray}}" wx:key="name" style="line-height: 50px">{{item.name}}</view>
+                    </picker-view-column>
+                </picker-view>
+                <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{cIndex}}" bindchange="changeCity2">
+                    <picker-view-column>
+                        <view wx:for="{{placeArray[pIndex].city}}" wx:key="name" style="line-height: 50px">{{item.name}}</view>
+                    </picker-view-column>
+                </picker-view>
+                <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{aIndex}}" bindchange="changeArea2">
+                    <picker-view-column>
+                        <view wx:for="{{placeArray[pIndex].city[cIndex].area}}" wx:key="*this" style="line-height: 50px">{{item}}</view>
+                    </picker-view-column>
+                </picker-view>
+            </view>
+        </view>
+    </view> 
+    
+
+</view>

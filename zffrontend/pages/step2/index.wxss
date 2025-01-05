@@ -1,0 +1,5 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+page {
+    background: #fff;
+}

@@ -1,0 +1,17 @@
+<view class="container" id="wrap">
+    <view class="body-content">
+        <form bindsubmit="formSubmit">
+            <view class="lists">
+                <view class="title">手机号：</view> 
+                <input type="number" name="tel" class="input" bindinput="bindKeyInput" value="{{tel}}" />
+            </view>
+            <view class="lists">
+                <view class="title">手机验证码：</view> 
+                <input type="number" name="code" class="input" />
+                <button bindtap="bindButtonTap" disabled="{{disabled}}" class="send">{{text}}</button>
+            </view>
+            <view class="prompt" wx:if="{{prompt}}">{{tipText}}</view>
+            <button formType="submit" type="primary" class="send-btn">提交</button>
+        </form>
+    </view>
+</view>

@@ -1,0 +1,54 @@
+<view class="publish-page">
+    <form reportSubmit bindsubmit="goToNext" class="publish-form">
+        <view class="section-title">
+      房源类型
+    </view>
+        <view class="tag-list">
+            <view bindtap="selectType" class="tag-item {{houseType===item?'active':''}}" data-type="{{item}}" wx:for="{{tags}}" wx:key="{{index}}">
+        {{item}}
+      </view>
+        </view>
+        <view class="section-title">
+      房源详情
+    </view>
+        <view bindtap="selectAddr" class="form-item">
+            <text class="label">位置</text>
+            <text class="value" wx:if="{{!districtName}}">请选择房源所在位置</text>
+            <text class="value has-value overflow-hidden" style="text-align:right;" wx:if="{{districtName}}">{{districtName}}</text>
+        </view>
+        <view class="form-item">
+            <text class="label">租金</text>
+            <input bindinput="inputPrice" class="value has-value" maxlength="5" name="price" placeholder="元/月" placeholderStyle="color:#646464;" type="number" value="{{price}}"></input>
+        </view>
+        <view class="form-item">
+            <text class="label">户型</text>
+            <picker bindchange="bindMultiPickerChange" mode="multiSelector" range="{{multiArray}}" value="{{multiIndex}}">
+                <view class="picker">
+                    <text class="value" wx:if="{{!houseInfo}}">几室几厅几卫</text>
+                    <text class="value has-value" wx:if="{{houseInfo}}">{{houseInfo}}</text>
+                </view>
+            </picker>
+        </view>
+        <view class="form-item">
+            <text class="label">性别要求</text>
+            <picker bindchange="bindPickerChange" range="{{genderArray}}" value="{{index}}">
+                <view class="picker">
+                    <text class="value" wx:if="{{!genderLimit}}">女/男</text>
+                    <text class="value has-value" wx:if="{{genderLimit}}">{{genderLimit}}</text>
+                </view>
+            </picker>
+        </view>
+        <view class="form-item">
+            <text class="label">入住时间</text>
+            <picker bindchange="bindDateChange" end="{{endDate}}" mode="date" start="{{startDate}}" value="{{checkInDate}}">
+                <view class="picker">
+                    <text class="value" wx:if="{{!checkInDate}}">请选择60天内</text>
+                    <text class="value has-value" wx:if="{{checkInDate}}">{{checkInDate}}</text>
+                </view>
+            </picker>
+        </view>
+        <view class="common-footer">
+            <button class="common-btn" formType="submit">下一步</button>
+        </view>
+    </form>
+</view>

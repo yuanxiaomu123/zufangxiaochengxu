@@ -1,0 +1,38 @@
+<view class="common-page">
+    <view class="house-list">
+        <view wx:if="{{lists}}" class="house-wrapper">
+            <block wx:for="{{lists}}" wx:key="id">
+                <navigator url="../product/show/show?id={{item.id}}">
+                    <view class="house-item">
+                        <view bindtap="viewDetail" class="house-content collect-wrapper" data-id="{{item.id}}">
+                            <view wx:if="{{item.thumbfiles}}" class="item-left">
+                                <image class="house-img" mode="aspectFill" src="{{item.thumbfiles}}"></image>
+                            </view>
+                            <view class="item-right">
+                                <view class="title overflow-hidden">
+                                    {{item.title}}
+                                </view>
+                                <view class="tag-list">
+                                    <view class="tag-item">近地铁</view>
+                                    <view class="tag-item">非隔断</view>
+                                </view>
+                                <view class="addr overflow-hidden">
+                                    相城区-元和街道
+                                </view>
+                                <view class="footers">
+                                    <text class="price">{{item.price}}元/月</text>
+                                    <text class="time">16天前更新</text>
+                                </view>
+                            </view>
+                        </view>
+                        <slot></slot>
+                    </view>
+                </navigator>
+            </block>
+        </view>
+        <view class="default-empty" wx:if="{{!isFetching&&!lists.length}}">
+            <image alt="" src="../../assets/images/default-empty.png"></image>
+            <view>暂无推荐房源哦</view>
+        </view>
+    </view>
+</view>

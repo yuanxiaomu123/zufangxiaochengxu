@@ -1,0 +1,122 @@
+.publish-form .section-title {
+    padding: 20rpx;
+}
+
+.publish-form .section-content {
+    padding: 20rpx;
+    background: #fff;
+    border-top: 1rpx solid #eee;
+    border-bottom: 1rpx solid #eee;
+    margin-bottom: 20rpx;
+}
+
+.publish-form .section-form {
+    padding: 0 20rpx;
+}
+
+.publish-form .form-item {
+    position: relative;
+    padding: 20rpx 0;
+    border-top: 1rpx solid #eee;
+}
+
+.publish-form .form-item:first-child {
+    border-top: none;
+}
+
+.form-item .suffix-icon {
+    position: absolute;
+    right: 0;
+    top: 26rpx;
+    color: #999;
+}
+
+.form-item .form-value,.form-item .form-tip {
+    position: absolute;
+    right: 20rpx;
+    display: inline-block;
+    text-align: right;
+    max-width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.form-item.with-suffix .form-value,.form-item.with-suffix .form-tip {
+    right: 36rpx;
+}
+
+.form-item .form-tip,.form-item .phclass {
+    color: #999;
+}
+
+.publish-form .last-sec {
+    margin-bottom: 120rpx;
+}
+
+.footer {
+    position: fixed;
+    bottom: 105rpx;
+    left: 50rpx;
+    right: 50rpx;
+    text-align: center;
+    z-index: 9999;
+}
+
+.footer button {
+    background: #66CC99;
+}
+
+.footer .button-hover,.btn-wrapper .button-hover {
+    background: #66CC99;
+}
+
+.btn-wrapper {
+    text-align: center;
+}
+
+.btn-wrapper button {
+    display: inline-block;
+    width: 650rpx;
+    background: #66CC99;
+    color: #fff;
+    margin-bottom: 60rpx;
+}
+
+@import "../../__wuBaseWxss__/0.wxss";
+
+page {
+    background: #fff;
+    color: #323232;
+}
+
+.pub-page {
+    padding-top: 20rpx;
+}
+
+.section-title {
+    padding: 20rpx 50rpx;
+    color: #646464;
+    font-size: 36rpx;
+}
+
+.image-desc {
+    padding: 0 50rpx;
+    font-size: 30rpx;
+}
+
+.image-desc .desc {
+    color: #969696;
+    font-size: 28rpx;
+}
+
+.desc-list {
+    display: flex;
+    padding: 0 50rpx;
+    justify-content: space-between;
+}
+
+.desc-list view {
+    width: 180rpx;
+    font-size: 30rpx;
+}

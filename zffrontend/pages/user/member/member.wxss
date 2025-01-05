@@ -1,0 +1,156 @@
+Page {
+  background: #f4f2f2;
+  width: 100%;
+  font-size: 16px;
+}
+.header {
+    display: flex;
+	flex-wrap: nowrap;
+    align-items:center;
+    padding: 10px 15px 10px 20px;
+    background: #fff;
+    margin-top: 14px;
+    position: relative;
+    z-index: 9;
+}
+.header .icon-link {
+    position: absolute;
+    width: 16px;
+    height :16px;
+    right: 25px;
+    top: 24px;
+    color: #e2e2e6;
+    font-size: 30px;
+}
+.header image {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+.header .logo-txt {
+    color: #999;
+    font-size: 50px;
+    margin-right: 15px;
+}
+.header .logo-title {
+    font-size: 14px;
+}
+.header .no-title {
+    font-size: 14px;
+    color: #666;
+}
+.header .integral {
+    line-height: 34px;
+    color: #ff6600;
+    display: flex;
+	flex-wrap: nowrap;
+    align-items:center;
+}
+.top {
+    position: relative;
+}
+.top .top-title {
+    position: absolute;
+    left: 100px;
+    top: 18px;
+}
+.top .integral {
+    position: absolute;
+    left: 100px;
+    top: 55px;
+    display: flex;
+	flex-wrap: nowrap;
+    align-items: center;
+    z-index: 999;
+    overflow: visible;
+}
+.top .integral .sign-cont {
+    padding-left: 10px;
+    position: relative;
+    overflow: visible;
+}
+.top .integral .sign-cont .jifen {
+    position: absolute;
+    left: 10px;
+    top: -2px;
+    color: red;
+    z-index: 9;
+    transition: all 0.8s;
+}
+.top .integral .sign-cont .show-jifen {
+    top: -40px;
+    opacity: 0;
+    transition-delay: 0s;
+}
+.top .integral .sign-cont button {
+    padding: 0 6px;
+    margin: 0;
+    font-size: 12px;
+    background: #ff6600;
+    color: #fff;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    z-index: 99;
+}
+.top .integral .sign-cont button:after {
+    border: none;
+}
+.top .integral .sign-cont .no-sign {
+    background: #ccc;
+}
+.user-link {
+    background: #fff;
+    margin-top: 14px;
+}
+.user-link navigator {
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding: 0 15px;
+}
+
+.user-link navigator .iconfont {
+    color: #999;
+    width: 50px;
+    text-align: center;
+    font-size: 30px;
+    display: inline-block;
+}
+.user-link navigator .pre {
+    width: 24px;
+    color: #fff;
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+    background:#0092d8;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+.user-link navigator .goods {
+    background:#f26d5f;
+}
+.user-link navigator .cart {
+    background:#35b87f;
+}
+.user-link navigator .coupon {
+    background:#ffa200;
+}
+.user-link navigator .txt {
+    font-size: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.user-link navigator .icon-link {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 20px;
+    top: 2px;
+    color: #e2e2e6;
+    font-size: 16px;
+}

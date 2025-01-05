@@ -1,0 +1,26 @@
+.news-category {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+}
+
+.news-category text {
+    margin: 0 10px;
+    color: #333;
+    line-height: 40px;
+}
+
+.news-category .active {
+    color: #00a0e9;
+}
+
+.news-list {
+    border-top: 8px solid #eee;
+    padding: 8px 8px;
+}
+
+.news-list navigator {
+    line-height: 36px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+}

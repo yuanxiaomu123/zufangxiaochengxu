@@ -1,0 +1,113 @@
+@import "../../__wuBaseWxss__/1.wxss";
+
+.roomy-item {
+    padding: 30rpx;
+    background: rgba(255,255,255,1);
+    border-radius: 10rpx;
+    margin-bottom: 30rpx;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user .left {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.user .name {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+}
+
+.time {
+    color: #969696;
+    font-size: 24rpx;
+    margin-top: 6rpx;
+}
+
+.price {
+    color: #F1826C;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.addr-info {
+    margin-top: 20rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.tag-list {
+    margin-top: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24rpx;
+}
+
+.tag-item {
+    margin: 6rpx 10rpx 6rpx 0;
+    padding: 2rpx 6rpx;
+    color: #6e3f37;
+    background: #F8EEED;
+}
+
+.desc-info {
+    margin-top: 20rpx;
+    color: #646464;
+    line-height: 1.5;
+}
+
+.wuju.icon-nan {
+    font-size: 36rpx;
+    margin-left: 10rpx;
+    color: #CFE3E3;
+}
+
+.icon-nv {
+    font-size: 36rpx;
+    margin-left: 10rpx;
+    color: #E5BCB8;
+}
+
+.sticky-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: #FFCF54;
+    color: #fff;
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.collect-wrapper {
+    position: relative;
+}
+
+.collect-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    opacity: 0;
+}

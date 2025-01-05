@@ -1,0 +1,78 @@
+<view class="container {{ loadingHide ? 'loading-hide' : '' }}" id="wrap">
+    <view class="status-list">
+        <block wx:for="{{orderCate}}" wx:for-item="item" wx:key="id">
+            <text data-status="{{item.id}}" bindtap="statusList" class="{{active[item.id]}}">{{item.title}}</text>
+        </block>
+    </view>
+    <view wx:if="{{showOn}}"> 
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="updateList" bindscroll="scroll">
+            <block wx:for="{{ordertList}}" wx:key="id">
+                <view class="order-content">
+                    <view class="order-top">订单号：{{item.orderid}}
+                        <view wx:if="{{item.status == 3}}">
+                            <text data-id="{{item.id}}" bindtap="removeOrder" class="remove iconfont icon-shanchu"></text>
+                        </view>
+                    </view>
+                    <block wx:for="{{item.orders}}" wx:for-item="val" wx:key="id">
+                        <view class="order-list">
+                            <navigator url="../../../product/show/show?id={{val.product_id}}" class="product-list-item">
+                                <image src="{{val.img}}"></image>
+                                <view class="title">[{{val.title}}]
+                                    <block wx:if="{{ val.attrs.length > 0}}">
+                                        <block wx:for="{{ val.attrs }}" wx:key="id" wx:for-item="v">
+                                            <text>{{ v.attr_value }}</text>
+                                        </block>
+                                    </block>
+                                </view>
+                                <view class="text-cont">
+                                    <text class="txt">{{val.num ? val.num : 1}} x </text>
+                                    <text class="price">{{val.price}}元</text>
+                                </view>
+                            </navigator>
+                        </view>
+                    </block>
+                    <view wx:if="{{item.is_coupon == 1}}" class="address coupon">
+                        <text>使用了优惠券   优惠：</text>
+                        <text class="coupon-price">-￥{{item.coupon_price}}</text>
+                    </view>
+                    <view class="address">
+                        <text>共 {{item.orders.length}} 件商品   实付款：</text>
+                        <text class="price">￥{{item.total_fee}}</text>
+                    </view>
+                    <view class="list-bottom">
+                        <view wx:if="{{item.status == 2}}">
+                            <navigator url="../kdniao/kdniao?key={{item.express_key}}&name={{item.express_name}}&order={{item.express_order}}">
+                                <view class="txt">查看物流</view>
+                            </navigator>
+                        </view>
+                        <view class="nav-red" wx:if="{{item.status == 3}}">
+                            <navigator url="../comment/comment?id={{item.id}}" open-type="navigateTo">
+                                <view wx:if="{{item.isComment == 0}}">
+                                    <view class="txt nav-red">评价晒单</view>
+                                </view>
+                                <view wx:else>
+                                    <view class="txt nav-gray">我的评价</view>
+                                </view>
+                            </navigator>
+                        </view>
+                        <view>
+                            <navigator url="../show/show?id={{item.id}}">
+                                <view class="txt">查看详情</view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view wx:if="{{!hasMore}}" class="noData"><text>没有更多内容了</text></view>
+            <navigator url="../../../index/index" class="link-home" open-type="switchTab">返回首页</navigator>
+        </scroll-view>
+    </view>
+    <view wx:else>
+        <view class="cart-bg">
+            <text class="iconfont icon-zanwudingdan"></text>
+        </view>
+        <view class="cart-title">亲，您还没有{{statusTitle}}订单！</view>
+        <navigator url="../../../index/index" class="link-home" open-type="switchTab">回到商城挑选商品</navigator>
+    </view>
+</view>
+

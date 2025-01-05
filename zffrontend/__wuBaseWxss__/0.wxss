@@ -1,0 +1,64 @@
+.img-list {
+    display: flex;
+    padding: 30rpx 10rpx;
+}
+
+.img-item {
+    position: relative;
+    margin: 0 30rpx;
+}
+
+.img-item .icon-wrapper {
+    position: absolute;
+    top: 0rpx;
+    right: -2rpx;
+    background: #666;
+    color: #fff;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    border-radius: 20rpx;
+    text-align: center;
+}
+
+.img-item .icon-wrapper i {
+    display: block;
+    font-size: 12px;
+}
+
+.img-item text {
+    position: absolute;
+    bottom: 10rpx;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    padding: 10rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.flex-img {
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.add-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180rpx;
+    height: 180rpx;
+    margin: 0 30rpx;
+    background: rgba(245,245,245,1);
+    border-radius: 10rpx;
+    text-align: center;
+    color: #969696;
+    font-size: 24rpx;
+}
+
+i.add-icon {
+    font-size: 70rpx;
+    margin-bottom: 10rpx;
+    color: #dcdcdc;
+}

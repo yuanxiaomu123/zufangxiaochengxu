@@ -1,0 +1,156 @@
+Page {
+  background: #f4f2f2;
+  width: 100%;
+  font-size: 12px;
+}
+.cart-bg {
+    text-align: center;
+    height: 110px;
+    line-height: 110px;
+    margin-top: 12px;
+}
+.cart-bg .iconfont {
+    font-size: 80px;
+    color: #999;
+}
+
+.cart-title {
+    color: #999;
+    text-align: center;
+    font-size: 14px;
+    line-height: 50px;
+}
+.link-home {
+    display: block;
+    background-color:#0092d8;
+    margin: 10px 20px;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+}
+
+.order-content {
+    background: #fff;
+    margin-top: 12px;
+    padding: 5px 10px;
+}
+
+.order-top {
+    line-height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.order-top .remove {
+    position:absolute;
+    right:8px;
+    display:block;
+    top:0;
+    width:24px;
+    height:24px;
+    font-size:24px;
+    color:#999;
+}
+
+.order-list navigator {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 8px 5px;
+    display: flex;
+	flex-wrap: nowrap;
+    align-items:center; 
+}
+.order-list .title {
+    width: 80%;
+    line-height: 20px;
+}
+.order-list .title text {
+    padding: 0 5px;
+    color: #888;
+}
+.text-cont {
+    width: 100px;
+    text-align: right;
+}
+.text-cont .txt {
+    color: #999;
+}
+
+.text-cont .price {
+    color: red;
+    font-size: 14px;
+}
+.address .price {
+    color: #f90;
+}
+.order-list navigator image {
+    width: 40px;
+    height: 40px;
+    margin-right: 7px;
+}
+.address {
+    line-height: 32px;
+    padding: 5px 6px;
+    text-align: right;
+    font-size: 14px;
+}
+.coupon {
+    font-size: 12px;
+    color: #666;
+}
+.address .coupon-price {
+    font-weight: bold;
+    font-size: 14px;
+    color: #5cb85c;
+    font-weight: bold;
+}
+.order-list .remove {
+    position: absolute;
+    right: 18px;
+    display: block;
+    top: 28px;
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.status-list {
+    background: #fff;
+    line-height: 38px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.status-list text {
+    display: block;
+    width: 33.3%;
+    text-align: center;
+}
+.status-list .active {
+    background: #f6f4f4;
+}
+
+.list-bottom {
+    text-align: right;
+    border-top: 1px solid #e3e5e9;
+    margin-top: 6px;
+    padding: 12px 8px 8px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+.list-bottom navigator {
+    display: inline-block;
+    border: 1px solid #232326;
+    border-radius: 3px;
+    line-height: 26px;
+    padding: 0 10px;
+    margin-left: 10px;
+}
+.list-bottom .nav-red {
+    color: #f90;
+}
+.list-bottom .nav-gray {
+    color: #666;
+}

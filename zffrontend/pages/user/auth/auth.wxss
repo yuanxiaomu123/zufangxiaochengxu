@@ -1,0 +1,51 @@
+Page {
+  width: 100%;
+  font-size: 16px;
+}
+.body-content {
+    background: #fff;
+    border-top: 1px solid #cbcbcb;
+    padding-top: 20px;
+}
+.auth {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.auth .icon {
+    font-size: 100px;
+    color: #999;
+}
+.top {
+    line-height: 34px;
+    padding-left: 20px;
+}
+.top .title {
+    font-size: 15px;  
+}
+.top .txt {
+    color: #999;
+}
+
+.btn-cont {
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding: 20px;
+    display: flex;
+	flex-wrap: nowrap;
+    align-items:center;
+    justify-content: center;
+
+}
+
+.btn-cont button {
+    margin: 0 12px;
+    padding: 0;
+    width: 120px;
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+}
+.btn-cont .determine {
+    background: #ff6600;
+    color: #fff;
+}

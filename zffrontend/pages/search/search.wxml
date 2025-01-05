@@ -1,0 +1,35 @@
+<view class="container" id="product-wrap">
+    <view class="top-content">
+        <view class="search-content">
+            <view class="search">
+                <text class="sousuo iconfont icon-sousuo"></text>
+                <view wx:if="{{isInput}}">  
+                    <input type="text" bindinput="bindKeyInput" placeholder="请输入您想要的商品" vaule="{{inputValue}}" focus="{{focus}}" bindconfirm="searchBtn" />
+                </view>
+                <view wx:else>
+                    <input type="text" bindinput="bindKeyInput" placeholder="请输入您想要的商品" vaule="{{inputValue}}" focus="{{focus}}" bindconfirm="searchBtn" />
+                </view>
+                <text bindtap="clearInput" class="guanbi iconfont icon-guanbi1"></text>
+            </view>
+            <button class="search-btn" bindtap="searchBtn">搜索</button>
+        </view>
+    </view>
+
+	<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+	bindscrolltolower="updateList" bindscroll="scroll">
+		<view class="product-list">
+			<block wx:for="{{products}}" wx:key="id">
+				<view wx:if="{{item.id}}">
+					<navigator url="../product_show/product_show?id={{item.id}}">
+						<view class="img"><image src="{{item.thumbfiles}}"></image></view>
+                        <view class="title">
+                            <view class="txt">{{item.title}}</view>
+                            <text class="price">￥{{item.price}}</text>
+                        </view>
+					</navigator>
+				</view>
+			</block>
+		</view>
+		<view wx:if="{{!hasMore}}" class="noData"><text>{{products.length > 0 ? '没有更多内容了' : '暂无搜索结果！'}}</text></view>
+	</scroll-view>
+</view>

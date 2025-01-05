@@ -1,0 +1,36 @@
+<view class="container" id="wrap">
+    <view wx:if="{{isShow}}">
+        <view class="top row">
+            <view class="title">
+                <text class="txt">订单编号：</text>
+                <text class="order">{{express_order}}</text>
+            </view>
+            <view class="title">
+                <text class="txt">国内承运人：</text>
+                <text class="order">{{express_name}}</text>
+            </view>
+        </view>
+
+        <view class="order-list row">
+            <block wx:for="{{lists}}" wx:key="AcceptTime">
+                <view wx:if="{{index == 0}}" class="list on">
+                    <text class="icons-on"></text>
+                    <view class="content">
+                        <view class="txt">{{item.AcceptStation}}</view>
+                        <view class="time">{{item.AcceptTime}}</view>
+                    </view>
+                </view>  
+                <view wx:else class="list">
+                    <text class="icons"></text>
+                    <view class="content">
+                        <view class="txt">{{item.AcceptStation}}</view>
+                        <view class="time">{{item.AcceptTime}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+
+        <view class="prompt-txt">{{lists == '' ? '暂无物流信息！': ''}}</view>
+
+    </view>
+</view>

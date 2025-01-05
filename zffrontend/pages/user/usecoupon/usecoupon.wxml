@@ -1,0 +1,35 @@
+<view class="container" id="wrap">
+    <view wx:if="{{isShow}}">
+        <block wx:for="{{coupon}}" wx:for-item="val" wx:key="id">
+            <view class="coupon-list">
+                <view class="coupon-left">
+                    <text class="price-text">满减券</text>
+                    <text class="price">¥{{val.price}}</text>
+                </view>
+                <view class="coupon-right">
+                    <text class="text">+ 满{{val.full_price}}元可用</text>
+                    <text class="text">+ 有效期{{val.start_time}}至{{val.end_time}}</text>
+                </view>
+            </view>
+            <view class="coupon-receive">
+                <view class="coupon-title">{{val.title}}</view>
+                <view wx:if="{{val.is_use == 0}}">
+                    <text class="coupon iconfont icon-buxuanzhong" data-id="{{val.id}}" bindtap="couponChoice"></text>
+                </view>
+                <view wx:else class="back-fff">
+                    <text class="coupon choice iconfont icon-morendizhi" data-id="{{val.id}}" bindtap="couponChoice"></text>
+                </view>
+            </view>
+        </block>
+        <button bindtap="clickBack" class="click-confirm">确认</button>
+    </view>
+    <view wx:else>
+        <view class="cart-bg">
+            <text class="iconfont icon-coupons"></text>
+        </view>
+        <view class="cart-title">亲，暂时没有可用优惠券！</view>
+        <navigator url="../coupon/coupon" open-type="navigateTo">
+            领取优惠券
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,81 @@
+<view class="container {{ loadingHide ? 'loading-hide' : '' }}" id="wrap">
+    <view wx:if="{{isShow}}">
+        <view class="top row">
+            <view wx:if="{{order.status == 1}}">
+                <text class="iconfont icon-yifukuan"></text>
+            </view>
+            <view wx:elif="{{order.status == 2}}">
+                <text class="iconfont icon-iconddfh"></text>
+            </view>
+            <view wx:elif="{{order.status == 3}}">
+                <text class="iconfont icon-yiwancheng9"></text>
+            </view>
+            <view class="txt">{{orderStatus[order.status]}}</view>
+        </view>
+
+        <view class="address row">
+            <view class="title">
+                <text class="dizhi iconfont icon-dizhi1"></text>
+                <text>{{order.receive_name}}</text>
+                <text class="tel">{{order.receive_tel}}</text>
+            </view>
+            <view class="content">{{order.receive_address}}</view>
+        </view>
+
+        <view class="order-list row">
+            <view class="titles">
+                <text class="iconfont icon-icon_suoshudingdanbianhao"></text>
+                <text class="txt">订单编号：{{order.orderid}}</text>
+            </view>
+            <block wx:for="{{order.orders}}" wx:for-item="val" wx:key="id">
+                <navigator url="../../../product/show/show?id={{val.product_id}}" class="list-item">
+                    <image src="{{val.img}}"></image>
+                    <view class="text-cont">
+                        <view class="title">[{{val.title}}]
+                                <block wx:if="{{ val.attrs.length > 0}}">
+                                    <block wx:for="{{ val.attrs }}" wx:key="id" wx:for-item="v">
+                                        <text>{{ v.attr_value }}</text>
+                                    </block>
+                                </block>
+                            </view>
+                        <view class="price">￥{{val.price}}</view>
+                    </view>
+                </navigator>
+            </block>
+        </view>
+
+        <view class="order-content row">
+            <view>下单时间：{{order.timeline}}</view>
+            <view>支付方式：在线支付</view>
+            <view wx:if="{{order.express_name}}">配送方式：{{order.express_name}}</view>
+            <view wx:if="{{order.express_order}}">快递单号：{{order.express_order}}</view>
+        </view>
+
+        <view class="order-foot row">
+            <view class="cont">
+                <text class="txt">商品总额</text>
+                <text class="price">￥{{order.total_fee}}</text>
+            </view>
+            <view class="cont">
+                <text class="txt">+运费</text>
+                <text class="price">￥0.00</text>
+            </view>
+            <view class="cont">
+                <text class="txt">-积分优惠</text>
+                <text class="price">-￥{{order.integral}}</text>
+            </view>
+            <view class="cont">
+                <text class="txt">-优惠券</text>
+                <text class="price">-￥{{order.coupon_price ? order.coupon_price : 0}}</text>
+            </view>
+            <view class="content">
+                <text class="txt">实付款：</text>
+                <text class="price">￥{{order.total_fee}}</text>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{order.status == 2}}">
+        <text class="receiving" bindtap="receiving">确认收货</text>
+        <view class="receiving-height"></view>
+    </view>
+</view>

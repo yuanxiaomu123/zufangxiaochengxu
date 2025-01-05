@@ -1,0 +1,132 @@
+<view class="container" id="wrap">
+    <view wx:if="{{showOn == 2}}"> 
+        <view class="top">
+            <view class="titles">购物清单</view>
+            <view class="cart-list">
+                <block wx:for="{{cartList}}" wx:key="id">
+                    <view wx:if="{{item.id}}" class="list">
+                        <navigator url="../../product/show/show?id={{item.id}}" class="product-list-item">
+                            <image src="{{item.thumbfiles}}"></image>
+                        </navigator>
+                        <view class="text-cont">
+                            <view class="title">{{item.title}}</view>
+                            <block wx:if="{{ item.attrs.length > 0}}">
+                                <view class="attrs">
+                                    <block wx:for="{{ item.attrs }}" wx:key="id" wx:for-item="val">
+                                        <text>{{ val.attr_value }}</text>
+                                    </block>
+                                </view>
+                            </block>
+                            <view class="cart-cont">
+                                <block wx:if="{{item.insufficient == 1}}">
+                                    <text class="tip">商品暂时缺货！</text>
+                                </block>
+                                <block wx:else>
+                                    <view class="price">￥{{item.price}}</view>
+                                    <view class="button-num">
+                                        <button bindtap="bindNum" data-status="1" data-num="{{item.num}}" data-id="{{item.id}}" data-cartid="{{item.cart_id}}"  class="button">-</button>
+                                        <text class="quantity-txt" bindtap="quantity" data-num="{{item.num}}" data-id="{{item.id}}" data-cartid="{{item.cart_id}}">{{item.num}}</text>
+                                        <button bindtap="bindNum" data-cartid="{{item.cart_id}}" data-status="2" data-num="{{item.num}}" data-id="{{item.id}}" class="button">+</button>
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                        <text data-id="{{item.id}}" data-cartid="{{item.cart_id}}" bindtap="removecart" class="remove iconfont icon-shanchu"></text>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="top address">
+            <view class="titles">收货地址</view>
+            <view wx:if="{{isAddress == 1}}" class="address-list">
+                <navigator url="../address/list/list">
+                    <view>
+                        <text>{{adress.name}}</text>
+                        <text class="tel">{{adress.tel}}</text>
+                    </view>
+                    <view>{{adress.province}}{{adress.city}}{{adress.area}}{{adress.detailed}}</view>
+                </navigator>
+            </view>
+            <view wx:else>
+                <navigator url="../address/list/list" class="add-address">选择收货地址</navigator>
+            </view>
+        </view>
+        <view class="top integral">
+            <text class="txt">积分</text>
+            <text class="cont">共{{userIntegral}}积分，满100积分可用</text>
+            <view wx:if="{{discount > 0}}" class="integral-switch">
+                <switch bindchange="switchChange" color="#ff0f44" />
+            </view>
+            <view wx:else class="integral-switch">
+                <text class="integral-txt">无可用</text>
+            </view>
+        </view>
+        <view class="top coupon">
+            <navigator url="../usecoupon/usecoupon?totalPrice={{totalPrice}}" open-type="navigateTo">
+                <text class="txt">优惠券</text>
+                <view wx:if="{{couponNum == 0}}" class="coupon-notice">
+                    暂无
+                </view>
+                <view wx:elif="{{couponNum > 0  && canUseNum == 1 && subPrice > 0}}" class="coupon-notice">
+                    已选1张
+                </view>
+                <view wx:elif="{{couponNum > 0  && canUseNum >= 1 && subPrice == 0}}" class="coupon-notice">
+                    {{couponNum}}张可用
+                </view>
+                <view wx:if="{{couponNum == 0}}" class="coupon-sub-price">-￥0</view>
+                <view wx:elif="{{couponNum > 0  && canUseNum == 1 && subPrice > 0}}" class="coupon-sub-price">
+                    -￥{{subPrice}}
+                </view>
+                <view wx:elif="{{couponNum > 0  && canUseNum >= 1 && subPrice == 0}}" class="coupon-sub-price">
+                    未使用
+                </view>
+                <text class="icon-coupon iconfont icon-jiantouyou"></text>
+            </navigator>
+        </view>
+        <view class="top orders">
+            <view class="titles">订单金额</view>
+            <view class="orders-cont">
+                <view class="num">商品数量<text>{{totalNum}}</text></view>
+                <view class="price">共<text>{{totalPrice}} 元</text></view>
+            </view>
+            <view class="orders-cont" wx:if="{{discount > 0 && isIntegral == 1}}">
+                <view class="num">-{{discount*100}}积分</view>
+                <view class="price"><text>-￥{{discount}}</text></view>
+            </view>
+            <view class="orders-cont" wx:if="{{subPrice > 0}}">
+                <view class="num">优惠券</view>
+                <view class="price"><text>-￥{{subPrice}}</text></view>
+            </view>
+        </view>
+        <button bindtap="payment" class="buy-now" data-tel="{{adress.tel}}">使用微信支付</button>
+        <include src="../../footer.wxml"/>
+        <view style="height: 48px;"></view>
+    </view>
+    <view wx:elif="{{showOn == 1}}">
+        <view class="cart-bg">
+            <text class="iconfont icon-konggouwuche"></text>
+        </view>
+        <view class="cart-title">亲，购物车还是空的</view>
+        <navigator url="../../index/index" class="link-home" open-type="switchTab">回到商城挑选商品</navigator>
+    </view>
+
+    <view wx:if="{{isFixed}}">
+        <view class="stock-fixed-bg" bindtap="cancel"></view>
+        <view class="stock-fixed">
+            <view class="txt">修改购买数量</view>
+            <view class="button-num" id="fixed-num">
+                <button bindtap="bindFixedNum" data-status="1" class="button">-</button>
+                <input type="number" bindinput="bindKeyInput" class="quantity" value="{{quantity}}" focus="{{focus}}" />
+                <button bindtap="bindFixedNum" data-status="2" class="button">+</button>
+            </view>
+            <view class="operating">
+                <text class="cancel" bindtap="cancel">取消</text>
+                <text class="determine" bindtap="determine">确定</text>
+            </view>
+        </view>
+    </view>
+    
+
+</view>
+
+

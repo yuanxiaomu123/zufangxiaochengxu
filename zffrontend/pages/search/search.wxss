@@ -1,0 +1,106 @@
+
+.product-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-content {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px;
+}
+
+.search {
+    background: #eee;
+    width: 100%;
+    position: relative;
+}
+
+.search .sousuo {
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+.search .guanbi {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    z-index: 9;
+    font-size: 10px;
+    color: #fff;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #b2b2b2;
+    text-align: center;
+    line-height: 20px;
+}
+
+.search input {
+    display: block;
+    padding: 0 26px;
+    line-height: 26px;
+    height: 26px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.search-btn {
+    background: #0092d8;
+    color: #fff;
+    font-size: 12px;
+    width: 50px;
+    min-width: 50px;
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    padding: 0;
+    border-radius: 3px;
+    margin-left: 8px;
+}
+
+.product-list navigator {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items:center;
+    padding: 7px 4px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-list navigator .img {
+    height: 70px;
+    width: 80px;
+    min-width: 80px;
+}
+
+.product-list navigator .img image {
+    height: 70px;
+    width: 80px;
+}
+
+.product-list navigator .title {
+    padding-left: 5px;
+}
+
+.product-list navigator .title .txt {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    line-height: 30px;
+}
+
+.product-list navigator .title .price {
+    color: #ff6702;
+    font-size: 18px;
+}
+
+.srote-txt {
+    color: #999;
+    font-size: 14px;
+    padding: 10px 0 0 15px;
+}

@@ -1,0 +1,140 @@
+
+#product-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 12px;
+}
+
+#product-wrap .wd100 {
+    overflow: hidden;
+}
+
+.cate-list {
+    width: 100%;
+}
+.product-category text {
+    display: block;
+    text-align: center;
+    line-height: 50px;
+}
+
+.product-category .active {
+    color: #0092d8;
+    font-weight: bold;
+}
+
+.product-list navigator {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items:center;
+    padding: 7px 4px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-list navigator .img {
+    height: 70px;
+    width: 80px;
+    min-width: 80px;
+    overflow: hidden;
+}
+
+.product-list navigator .img image {
+    height: 70px;
+    width: 80px;
+}
+
+.product-list navigator .title {
+    padding-left: 5px;
+}
+
+.product-list navigator .title .txt {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    line-height: 30px;
+}
+
+.product-list navigator .title .price {
+    color: #ff6702;
+    font-size: 18px;
+}
+
+.srote-txt {
+    color: #999;
+    font-size: 14px;
+    padding: 10px 0 0 15px;
+}
+
+.bg-fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 100%;
+    top: 0;
+}
+.category-list .link {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items:center;
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    line-height: 30px;
+}
+.category-list .link .a {
+    flex: 1;
+    font-size: 15px;
+}
+.category-list .link .icon-link {
+    width: 30px;
+    min-width: 30px;
+    text-align: center;
+    color: rgb(216, 206, 206);
+}
+.category-list .child .a {
+    padding-left: 15px;
+}
+
+.select {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 40px;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+.select > view {
+    width: 33.33%;
+    text-align: center;
+}
+
+.select .price > view {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+
+.select .price .jiao {
+    position: relative;
+    width: 12px;
+    height: 40px;
+}
+
+.select .price .jiao text {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    color: #333;
+}
+
+.select .price .jiao .da {
+    top: 3px;
+}
+
+.select .active,
+.select .active .jiao .red {
+    color: red;
+}

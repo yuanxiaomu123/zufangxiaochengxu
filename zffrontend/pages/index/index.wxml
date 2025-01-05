@@ -1,0 +1,81 @@
+<view class="home-page">
+    <view class="header">
+        <view class="search-box">
+            <i bindtap="selectCity" class="wuju icon-weizhi"></i>
+            <view bindtap="selectCity" class="city">
+                <text wx:if="{{currCity}}">{{currCity}}</text>
+            </view>
+            <i bindtap="selectCity" class="iconfont icon-xiala1"></i>
+            <view class="divider"></view>
+            <view bindtap="search" class="tip">
+                <i class="wuju icon-sousuo"></i>请输入你想住的地点
+      </view>
+        </view>
+    </view>
+    <view class="menu-list">
+        <view bindtap="goToList" class="menu-item" data-type="整租">
+            <image src="../../assets/images/home/zhengzu2.png"></image>
+            <view class="menu-desc">整租</view>
+        </view>
+        <view bindtap="goToList" class="menu-item" data-type="合租">
+            <image src="../../assets/images/home/hezu2.png"></image>
+            <view class="menu-desc">合租</view>
+        </view>
+        <view bindtap="goToList" class="menu-item" data-type="公寓">
+            <image src="../../assets/images/home/gongyu2.png"></image>
+            <view class="menu-desc">公寓</view>
+        </view>
+    </view>
+    <view class="recommend-section">
+        <view class="section-title">专属推荐</view>
+        <view class="recommend-list">
+            <image bindtap="viewSpecial" data-type="房东直租" src="../../assets/images/home/fangdongzhizu.png"></image>
+            <image bindtap="viewSpecial" data-type="女生合租" src="../../assets/images/home/nvshenghezu.png"></image>
+            <image bindtap="viewSpecial" data-type="降价转租" src="../../assets/images/home/jiangjiazhuanzu.png"></image>
+            <image bindtap="viewSpecial" data-type="月租短租" src="../../assets/images/home/yuezuduanzu.png"></image>
+        </view>
+    </view>
+    <view wx:if="{{!isFetching}}">
+        <view class="section-title" style="padding-bottom:0;">房源推荐</view>
+        <view class="house-list">
+            <view wx:if="{{houseData}}" class="house-wrapper">
+                <block wx:for="{{houseData}}" wx:key="id">
+                    <navigator url="../product/show/show?id={{item.id}}">
+                        <view class="house-item">
+                            <view bindtap="viewDetail" class="house-content collect-wrapper" data-id="{{item.id}}">
+                                <view class="item-left">
+                                    <image class="house-img" mode="aspectFill" src="{{item.thumbfiles}}"></image>
+                                </view>
+                                <view class="item-right">
+                                    <view class="title overflow-hidden">
+                                        <text wx:if="{{item.houseType}}">{{item.houseType}} · </text>{{item.districtName}} · {{item.bedroom}}室
+                                    </view>
+                                    <view class="tag-list" wx:if="{{item.houseTags}}">
+                                        <view class="tag-item" wx:for="{{item.houseTags}}" wx:key="{{index}}">{{item}}</view>
+                                    </view>
+                                    <view class="addr overflow-hidden">
+                                        相城区-元和街道
+                                    </view>
+                                    <view class="footers">
+                                        <text class="price">{{item.price}}元/月</text>
+                                        <text class="time">16天前更新</text>
+                                    </view>
+                                </view>
+                            </view>
+                            <slot></slot>
+                        </view>
+                    </navigator>
+                </block>
+            </view>
+            <view class="default-empty" wx:else>
+                <image alt="" src="../../assets/images/default-empty.png"></image>
+                <view>暂无推荐房源哦</view>
+            </view>
+        </view>
+    </view>
+    <image bindtap="backTop" class="back-top" src="../../assets/images/back-top.png" wx:if="{{iconVisual}}"></image>
+    <view class="spinner" wx:if="{{isFetching}}">
+        <view class="double-bounce1"></view>
+        <view class="double-bounce2"></view>
+    </view>
+</view>

@@ -1,0 +1,62 @@
+<view class="{{ loadingHide ? 'loading-hide' : '' }}" id="product-wrap">
+    <scroll-view scroll-x="true" class="cate-list" style="height:{{scrollHeight + 40}}px;" scroll-top="{{scrollTop}}">
+        <view class="product-category">
+            <block wx:for="{{Category}}" wx:key="cid">
+                <text wx:if="{{ item.children }}" data-cid="{{item.cid}}" bindtap="cateList" data-children="1" class="{{active[item.cid]}}">{{item.cname}}</text>
+                <text wx:else data-cid="{{item.cid}}" data-children="0" bindtap="cateList" class="{{active[item.cid]}}">{{item.cname}}</text>
+            </block>
+        </view>
+    </scroll-view>
+    <view class="wd100">
+        <view class="select">
+            <view bindtap="search" data-act="default" data-actval="{{actval}}" class="{{ act == 'default' ? 'active' : ''}}">默认</view>
+            <view bindtap="search" data-act="recom1" data-actval="{{actval}}" class="{{ act == 'recom1' ? 'active' : ''}}">推荐</view>
+            <view bindtap="search" data-act="price" data-actval="{{actval}}" class="price {{ act == 'price' ? 'active' : ''}}">
+                <view>价格</view>
+                <view class="jiao">
+                    <text class="xiao iconfont icon-shixinjiantou1 {{ actval == 0 ? 'red' : ''}}"></text>
+                    <text class="da iconfont icon-shixinjiantou {{ actval == 1 ? 'red' : ''}}"></text>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{products.length > 0}}" class="wd100">
+            <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="updateList" bindscroll="scroll">
+                <view class="product-list">
+                    <block wx:for="{{products}}" wx:key="id">
+                        <navigator url="../show/show?id={{item.id}}">
+                            <view class="img"><image src="{{item.thumbfiles}}"></image></view>
+                            <view class="title">
+                                <view class="txt">{{item.title}}</view>
+                                <text class="price">￥{{item.price}}</text>
+                            </view>
+                        </navigator>
+                    </block>
+                </view>
+                <view wx:if="{{!hasMore}}" class="noData"><text>没有更多内容了！</text></view>
+            </scroll-view>
+        </view>
+        <view wx:else class="wd100">
+            <view class="no-information">
+                <text class="iconfont icon-nothing-copy"></text>
+            </view>
+            <view class="no-information-title">暂无相关信息！</view>
+        </view>
+    </view>
+</view>
+
+<view class="bg-fixed" wx:if="{{ isChild }}">
+    <view class="category-list">
+        <block wx:for="{{child}}" wx:key="cid">
+            <view class="link">
+                <text class="a" data-cid="{{item.cid}}" data-children="2" bindtap="childUpdate">{{item.cname}}</text>
+                <text class="icon-link iconfont icon-jiantouyou"></text>
+            </view>
+            <block wx:for="{{item.children}}" wx:key="cid" wx:for-item="val">
+                <view class="link child">
+                    <text class="a" data-cid="{{val.cid}}" data-children="2" bindtap="childUpdate">{{val.cname}}</text>
+                    <text class="icon-link iconfont icon-jiantouyou"></text>
+                </view>
+            </block>
+        </block>
+    </view>
+</view>

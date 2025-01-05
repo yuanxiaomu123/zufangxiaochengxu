@@ -1,0 +1,161 @@
+Page {
+  background: #f4f2f2;
+  width: 100%;
+  font-size: 12px;
+}
+.top {
+    display: flex;
+	flex-wrap: nowrap;
+    align-items:center;
+    line-height: 70px;
+    vertical-align: top;
+}
+.top .iconfont {
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+    font-size: 36px;
+    color: #999;
+    position: relative;
+    top: 4px;
+}
+
+.top .txt {
+    font-size: 16px;
+    color: #444;
+}
+
+.row {
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.order-list navigator {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 8px 5px;
+    display: flex;
+	flex-wrap: nowrap;
+    align-items:center; 
+}
+.order-list .text-cont {
+    width: 100%;
+    line-height: 20px;
+}
+.order-list .text-cont .title text {
+    padding: 0 6px;
+    color: #888;
+    display: inline-block;
+}
+.order-list .text-cont .price {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+.order-list navigator image {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    margin-right: 7px;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    margin: 0 10px 0 6px;
+}
+
+.titles {
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 40px;
+}
+
+.titles .iconfont {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    color: #81838e;
+    font-size: 14px;
+}
+
+.address {
+    padding: 8px;
+}
+
+.address .title {
+    line-height: 26px;
+}
+
+.address .dizhi {
+    color: #81838e;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+
+.address .tel {
+    padding-left: 10px;
+}
+
+.address .content {
+    color: #888;
+    line-height: 20px;
+    padding-left: 20px;
+}
+
+.order-content > view {
+    line-height: 44px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+.order-foot {
+    padding-top: 10px;
+    color: #686868;
+}
+.order-foot .cont {
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+.order-foot .cont .txt {
+    font-size: 15px;
+    padding-left: 10px;
+}
+.order-foot .cont .price {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    display: block;
+    font-size: 18px;
+}
+
+.order-foot .content {
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 8px;
+    line-height: 50px;
+    font-size: 20px;
+    color: #232326;
+    padding-right: 12px;
+}
+
+.order-foot .content .price {
+    color: red;
+}
+
+.receiving-height {
+    height: 32px;
+}
+.receiving {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    background: #0092d8;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}

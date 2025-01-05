@@ -1,0 +1,112 @@
+page {
+    background: #fff;
+}
+.house-wrapper {
+    padding: 0 40rpx;
+}
+
+.house-item {
+    position: relative;
+    border-bottom: 1rpx solid #eaeaea;
+    padding: 30rpx 0;
+}
+
+.house-content {
+    display: flex;
+}
+
+.house-content .house-img {
+    display: block;
+    width: 240rpx;
+    height: 180rpx;
+    margin-right: 20rpx;
+}
+
+.item-right {
+    flex: auto;
+}
+
+.item-right .title {
+    font-weight: 400;
+    font-size: 32rpx;
+}
+
+.item-right .addr {
+    font-size: 26rpx;
+    color: #969696;
+    margin-top: 6rpx;
+}
+
+.item-right .desc {
+    margin-top: 6rpx;
+    font-size: 26rpx;
+    color: #969696;
+}
+
+.item-right .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6rpx;
+}
+
+.item-right .price {
+    color: #F1826C;
+    font-size: 32rpx;
+}
+
+.item-right .time {
+    color: #969696;
+    font-size: 24rpx;
+}
+
+.overflow-hidden {
+    width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24rpx;
+}
+
+.tag-item {
+    margin: 6rpx 10rpx 6rpx 0;
+    padding: 2rpx 6rpx;
+    color: #6e3f37;
+    background: #F8EEED;
+}
+
+.sticky-icon {
+    position: absolute;
+    top: 0;
+    right: -15rpx;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: #FFCF54;
+    color: #fff;
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.collect-wrapper {
+    position: relative;
+}
+
+.collect-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    opacity: 0;
+}

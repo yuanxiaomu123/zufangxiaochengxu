@@ -1,0 +1,80 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.7.2",
+	"appid": "wx782e3cef4af6e731",
+	"projectname": "%E8%8F%A0%E8%90%9D",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "产品详情",
+					"pathName": "pages/product/show/show",
+					"query": "id=249"
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/user/cart/cart",
+					"query": "id=249"
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/user/order/list/list",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "订单详情",
+					"pathName": "pages/user/order/show/show",
+					"query": "id=975"
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/member/member",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "产品列表",
+					"pathName": "pages/product/list/list",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,11 @@
+<view class="desc-page">
+    <view class="desc-tip">
+    请不要直接留联系方式，避免被骚扰哦
+  </view>
+    <form reportSubmit bindsubmit="save">
+        <textarea autoFocus class="desc-input" maxlength="500" name="houseDesc" placeholder="走心的文案将大大提高租房效率，请详细描述房源、室友、宠物等情况~" placeholderStyle="color:#646464;" value="{{houseDesc}}"></textarea>
+        <view class="common-footer">
+            <button class="common-btn" formType="submit">保存并返回</button>
+        </view>
+    </form>
+</view>

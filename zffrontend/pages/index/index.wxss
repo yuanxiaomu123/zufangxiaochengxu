@@ -1,0 +1,263 @@
+.list-page {
+    background-color: #fff;
+}
+
+.item {
+    color: #787878;
+    border-top: 1rpx solid #eaeaea;
+    background-color: #fff;
+    padding: 10rpx 0 5rpx 20rpx;
+}
+
+.item:last-child {
+    border-bottom: 1rpx solid #eaeaea;
+}
+
+.item_left image {
+    display: block;
+    width: 240rpx;
+    height: 200rpx;
+    margin: 30rpx 20rpx 20rpx 20rpx;
+}
+
+.item_middle {
+    overflow: hidden;
+    padding: 25rpx 20rpx 25rpx 0;
+}
+
+.item_middle .title {
+    font-weight: bold;
+    height: 50rpx;
+    line-height: 50rpx;
+    color: #333;
+}
+
+.item_middle .addr {
+    font-size: 0.8rem;
+    color: #006666;
+}
+
+.item_middle .addr i {
+    position: relative;
+    top: 4rpx;
+}
+
+.item_middle .desc {
+    font-size: 0.8rem;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.item_middle .price {
+    height: 55rpx;
+    line-height: 60rpx;
+    color: #ff6666;
+    font-size: 1.1rem;
+}
+
+page {
+    background: #fff;
+    color: #323232;
+}
+
+.section-title {
+    padding: 30rpx;
+    font-size: 36rpx;
+    color: #646464;
+}
+
+.header {
+    width: 690rpx;
+    margin: 20rpx auto;
+}
+
+.search-box {
+    display: flex;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #969696;
+    font-size: 30rpx;
+    border-radius: 40rpx;
+    padding: 0 40rpx;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(0,0,0,0.1);
+}
+
+.search-box i {
+    margin-right: 10rpx;
+    font-size: 14px;
+}
+
+.search-box .city {
+    width: 110rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.search-box .divider {
+    width: 1rpx;
+    background: #ddd;
+    height: 40rpx;
+    margin: 20rpx 20rpx 0 10rpx;
+}
+
+.search-box .tip {
+    flex: auto;
+}
+
+.menu-list {
+    display: flex;
+    margin: 50rpx 0 10rpx;
+    padding: 0 50rpx;
+    background: #fff;
+    font-size: 30rpx;
+}
+
+.menu-item {
+    flex: 1;
+    text-align: center;
+}
+
+.menu-item image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.recommend-list {
+    padding: 0 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommend-list image {
+    width: 160rpx;
+    height: 170rpx;
+}
+
+.spinner {
+    margin: 200rpx auto;
+}
+
+.default-empty {
+    padding: 80rpx 0;
+}
+
+.back-top {
+    position: fixed;
+    bottom: 80rpx;
+    right: 50rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.house-wrapper {
+    padding: 0 40rpx;
+}
+
+.house-item {
+    position: relative;
+    border-bottom: 1rpx solid #eaeaea;
+    padding: 30rpx 0;
+}
+
+.house-content {
+    display: flex;
+}
+
+.house-content .house-img {
+    display: block;
+    width: 240rpx;
+    height: 180rpx;
+    margin-right: 20rpx;
+}
+
+.item-right {
+    flex: auto;
+}
+
+.item-right .title {
+    font-weight: 400;
+    font-size: 32rpx;
+}
+
+.item-right .addr {
+    font-size: 26rpx;
+    color: #969696;
+    margin-top: 6rpx;
+}
+
+.item-right .desc {
+    margin-top: 6rpx;
+    font-size: 26rpx;
+    color: #969696;
+}
+
+.item-right .footers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6rpx;
+}
+
+.item-right .price {
+    color: #F1826C;
+    font-size: 32rpx;
+}
+
+.item-right .time {
+    color: #969696;
+    font-size: 24rpx;
+}
+
+.overflow-hidden {
+    width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24rpx;
+}
+
+.tag-item {
+    margin: 6rpx 10rpx 6rpx 0;
+    padding: 2rpx 6rpx;
+    color: #6e3f37;
+    background: #F8EEED;
+}
+
+.sticky-icon {
+    position: absolute;
+    top: 0;
+    right: -15rpx;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: #FFCF54;
+    color: #fff;
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.collect-wrapper {
+    position: relative;
+}
+
+.collect-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    opacity: 0;
+}

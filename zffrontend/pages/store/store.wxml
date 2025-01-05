@@ -1,0 +1,47 @@
+<view class="container">
+    <view wx:if="{{isShow}}">
+        <view class="header">
+            <view class="top-title">
+                <view class="title">{{Contents.store_name}}</view>
+                <text>{{Contents.store_summary}}</text>
+            </view>
+            <view class="logo">
+                <image class="img" src="{{Contents.store_img}}" />
+            </view>
+        </view>
+
+        <navigator class="common" bindtap="clickAddress">
+            <text class="icons iconfont icon-dizhi"></text>
+            <text class="title">{{Contents.store_address}}</text>
+            <text class="icon-link iconfont icon-jiantouyou"></text>
+        </navigator>
+
+        <view class="common">
+            <text class="icons iconfont icon-time"></text>
+            <text class="title">{{Contents.store_time}}</text>
+        </view>
+
+        <navigator class="common" bindtap="clickTel">
+            <text class="icons iconfont icon-dianhua"></text>
+            <text class="title">{{Contents.store_tel}}</text>
+            <text class="icon-link iconfont icon-jiantouyou"></text>
+        </navigator>
+
+        <view class="common">
+            <text class="icons iconfont icon-img"></text>
+            <text class="title">门店图片</text>
+        </view>
+
+        <view wx:if="{{sroteList != null}}">
+            <view class="srote-list">
+                <block wx:for="{{sroteList}}" wx:key="adsid">
+                    <view class="img"><image bindtap="clickImage" data-src="{{item.uploadfiles}}" src="{{item.uploadfiles}}" /></view>
+                </block>
+            </view>
+        </view>
+
+        <view wx:else>
+            <view class="srote-txt">暂无门店图片！</view>
+        </view>
+    </view>
+</view>

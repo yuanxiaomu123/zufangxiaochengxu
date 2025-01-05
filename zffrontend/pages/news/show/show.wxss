@@ -1,0 +1,397 @@
+#wrap {
+	padding: 0 6px;
+}
+.news-title {
+	font-size: 18px;
+	line-height: 24px;
+	padding: 3px 0;
+}
+.news-date {
+    color: #aaa;
+    line-height: 24px;
+    padding-left: 5px;
+}
+.news-show-top {
+	border-bottom: 1px solid #ddd;
+	padding: 6px 0;
+}
+.news-show {
+    padding: 10px 5px;
+    line-height: 24px;
+    color: #666;
+}
+
+page {
+    background: #fff;
+    color: #323232;
+}
+
+.detail-page {
+    position: relative;
+}
+
+.swiper-box {
+    height: 400rpx;
+}
+
+.slide-image {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.refresh-time {
+    position: absolute;
+    top: 30rpx;
+    left: 30rpx;
+    width: 180rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: rgba(0,0,0,0.3);
+    border-radius: 22rpx;
+    font-size: 24rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.house-info {
+    position: relative;
+}
+
+.tag-list {
+    margin-bottom: 10rpx;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24rpx;
+}
+
+.tag-item {
+    margin: 6rpx 10rpx 6rpx 0;
+    padding: 2rpx 6rpx;
+    color: #6e3f37;
+    background: #F8EEED;
+}
+
+.house-title {
+    margin-bottom: 10rpx;
+    color: #969696;
+    font-size: 34rpx;
+    line-height: 1.75;
+}
+
+.info-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    height: 106rpx;
+    margin: 10rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid rgba(232,232,232,1);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.info-title {
+    font-size: 28rpx;
+    color: #646464;
+}
+
+.info-value {
+    font-size: 32rpx;
+    color: #F07F6A;
+    font-weight: 500;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin: 10rpx 0 20rpx;
+}
+
+.user-info .avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.user-info .username {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+}
+
+.user-info .overflow-hidden {
+    max-width: 360rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10rpx;
+}
+
+.user-info .usertag {
+    margin-top: 6rpx;
+    font-size: 28rpx;
+    color: #646464;
+}
+
+.user-info .time {
+    width: 200rpx;
+    margin-left: 40rpx;
+    font-size: 24rpx;
+    color: #969696;
+    text-align: right;
+}
+
+.house-desc,.tip-list {
+    padding: 20rpx;
+    background: #f9f9f9;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #646464;
+    line-height: 1.5;
+}
+
+.house-map {
+    width: 690rpx;
+    height: 280rpx;
+}
+
+.common-info {
+    position: relative;
+    padding: 20rpx 30rpx;
+    background-color: #fff;
+}
+
+.common-info .title {
+    font-weight: bold;
+    line-height: 1.75;
+    font-size: 36rpx;
+    margin-bottom: 10rpx;
+}
+
+.common-info .desc {
+    display: inline-block;
+    width: 24%;
+    color: #666;
+    font-size: 0.8em;
+    border-left: 1rpx solid #ccc;
+    text-align: center;
+}
+
+.part-info .info-title {
+    padding: 0 30rpx;
+    font-size: 36rpx;
+    color: #323232;
+}
+
+.part-info .info-content {
+    padding: 20rpx 30rpx;
+    background-color: #fff;
+    font-size: 0.875em;
+}
+
+.report-text {
+    color: #F07F6A;
+    text-decoration: underline;
+}
+
+.place-holder {
+    height: 140rpx;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10rpx 30rpx;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90rpx;
+    background: #fff;
+    font-size: 0.8rem;
+    box-shadow: 0 0 8rpx rgba(0,0,0,0.14),0 8rpx 16rpx rgba(0,0,0,0.28);
+}
+
+.footer .action {
+    position: relative;
+    width: 110rpx;
+    text-align: center;
+    color: #999;
+}
+
+.footer .action-text {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+}
+
+.footer .action i {
+    font-size: 18px;
+    margin-right: 6rpx;
+}
+
+.footer .btn {
+    width: 140rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    border-radius: 64rpx;
+    text-align: center;
+    color: #fff;
+}
+
+.footer .contact-wrapper {
+    width: 180rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    background: linear-gradient(270deg,rgba(248,223,114,1) 0%,rgba(255,207,84,1) 100%);
+    box-shadow: 0px 2rpx 8rpx 0rpx rgba(0,0,0,0.1);
+    border-radius: 44rpx;
+    color: #323232;
+}
+
+.dialog-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0,0,0,0.85);
+    z-index: 99999;
+    text-align: center;
+}
+
+.dialog-box {
+    position: relative;
+    width: 460rpx;
+    padding: 40rpx;
+    background: #fff;
+    border-radius: 16rpx;
+    margin: 190rpx auto;
+}
+
+.dialog-box i.icon-close {
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    color: #999;
+    font-size: 16px;
+}
+
+.dialog-title {
+    padding: 30rpx 0 10rpx;
+}
+
+.dialog-title image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.dialog-tip {
+    margin: 30rpx 0;
+    font-size: 0.9rem;
+    color: #F07F6A;
+}
+
+.dialog-content {
+    font-size: 0.8rem;
+    color: #999;
+    line-height: 2;
+}
+
+.dialog-content text {
+    display: inline-block;
+    position: relative;
+    top: 6rpx;
+    margin: 0 20rpx;
+    font-size: 1.5rem;
+    color: #006666;
+}
+
+button.share-btn {
+    margin: 60rpx 40rpx 50rpx;
+    background: linear-gradient(270deg,rgba(248,223,114,1) 0%,rgba(255,207,84,1) 100%);
+    color: #323232;
+    border: none;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 999px;
+}
+
+.preview {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.9);
+    position: fixed;
+    z-index: 99999;
+    overflow: hidden;
+}
+
+.preview image {
+    width: 70%;
+    position: absolute;
+    top: 70rpx;
+    left: 15%;
+    z-index: 3;
+    border: 1px dashed #fff;
+}
+
+.preview button {
+    width: 40%;
+    position: absolute;
+    bottom: 50rpx;
+    left: 30%;
+    background: linear-gradient(270deg,rgba(248,223,114,1) 0%,rgba(255,207,84,1) 100%);
+    box-shadow: 0px 2rpx 8rpx 0px rgba(0,0,0,0.1);
+    color: #323232;
+}
+
+.noscroll {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.share-tip {
+    position: absolute;
+    top: 60rpx;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #FF6666;
+}
+
+.refresh-btn {
+    position: fixed;
+    right: 30rpx;
+    bottom: 300rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    width: 90rpx;
+    background: linear-gradient(270deg,rgba(254,182,146,1) 0%,rgba(240,127,106,1) 100%);
+    box-shadow: 0px 2rpx 8rpx 0px rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 26rpx;
+    z-index: 9999;
+}

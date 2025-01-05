@@ -1,0 +1,20 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+
+<!--index.wxml-->
+<view class="container">
+    <view class="logo">
+        <image class="img" src="http://localhost/boluo/template/default/images/logo.png" />
+    </view>
+
+    <view class="loginform">
+        <input type="text" placeholder="请输入手机号" placeholder-class="input-placeholder" />
+        <input type="text" placeholder="请输入验证码" placeholder-class="input-placeholder" class="yanz" /> <span>获取验证码</span>
+        <button class="submit"></button>
+    </view>
+
+    <view class="foots">
+        <button>已有账号，直接登录</button>
+        <button>请先带我参观，谢谢</button>
+    </view>
+    <view class="backgrounds"></view>
+</view>

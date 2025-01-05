@@ -1,0 +1,44 @@
+<view class="container {{ loadingHide ? 'loading-hide' : '' }}" id="wrap">
+    <view wx:if="{{isContent}}">
+        <block wx:for="{{lists}}" wx:key="id">
+            <view class="address-list">
+                <view class="hovers" bindtap="defaultAddress" data-id="{{item.id}}">
+                    <view class="contact">
+                        <text class="dizhi iconfont icon-dizhi1"></text>
+                        <text>{{item.name}}</text>
+                        <text class="tel">{{item.tel}}</text>
+                    </view>
+                    <view class="address">{{item.province}} {{item.city}} {{item.area}} {{item.detailed}}</view>
+                </view>
+                <view class="operation">
+                    <view class="left">
+                        <view wx:if="{{item.status == 1}}">
+                            <text class="dizhi iconfont icon-morendizhi"></text>
+                            <text class="txt">默认地址</text>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <view class="cont">
+                            <navigator url="../edit/edit?id={{item.id}}" open-type="redirect">
+                                <text class="iconfont icon-bianji"></text>
+                                <text>编辑</text>
+                            </navigator>
+                        </view>
+                        <view class="cont" data-id="{{item.id}}" bindtap="remove">
+                            <text class="iconfont icon-shanchu"></text>
+                            <text>删除</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <navigator url="../create/create" open-type="redirect" class="link-home">添加收货地址 + </navigator>
+    </view>
+    <view wx:else>
+        <view class="cart-bg">
+            <text class="iconfont icon-dizhi1"></text>
+        </view>
+        <view class="cart-title">亲，您还没有收货地址！</view>
+        <navigator url="../create/create" class="link-home" open-type="redirect">添加收货地址 + </navigator>
+    </view>
+</view>

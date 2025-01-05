@@ -1,0 +1,26 @@
+<view class="container {{ loadingHide ? 'loading-hide' : '' }}" id="wrap">
+    <view class="news-category">
+        <block wx:for="{{newsCategory}}" wx:key="cid">
+            <text data-cid="{{item.cid}}" bindtap="newsList" class="{{active[item.cid]}}">{{item.cname}}</text>
+        </block>
+    </view>
+    <view wx:if="{{news.length > 0}}">
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+        bindscrolltolower="updateList" bindscroll="scroll">
+            <view class="news-list">
+                <block wx:for="{{news}}" wx:key="id">
+                    <navigator url="../show/show?id={{item.id}}" class="news-list-item">
+                        <text>{{item.title}}</text>
+                    </navigator>
+                </block>
+            </view>
+            <view wx:if="{{!hasMore}}" class="noData"><text>没有更多内容了</text></view>
+        </scroll-view>
+    </view> 
+    <view wx:else>
+        <view class="no-information">
+            <text class="iconfont icon-nothing-copy"></text>
+        </view>
+        <view class="no-information-title">暂无相关信息！</view>
+    </view>
+</view>

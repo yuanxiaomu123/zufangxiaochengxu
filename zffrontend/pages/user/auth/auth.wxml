@@ -1,0 +1,15 @@
+<view class="container" id="wrap">
+    <view class="body-content">
+        <view class="auth">
+            <text class="icon iconfont icon-weixinshouquandenglu"></text>
+        </view>
+        <view class="top">
+            <view class="title">该程序将获取以下授权</view>
+            <view class="txt">· 获得您的公开信息（昵称、头像等）</view>
+        </view>
+        <view class="btn-cont">
+            <button bindtap="cancel" class="cancel">拒绝</button>
+            <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="determine">允许</button>
+        </view>
+    </view>
+</view>

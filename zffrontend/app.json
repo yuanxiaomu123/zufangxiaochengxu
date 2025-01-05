@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/store/store",
+    "pages/message/message",
+    "pages/user/member/member",
+    "pages/user/auth/auth",
+    "pages/user/personal/personal",
+    "pages/user/mobile/mobile",
+    "pages/user/cart/cart",
+    "pages/user/address/list/list",
+    "pages/user/address/create/create",
+    "pages/user/address/edit/edit",
+    "pages/user/goods/goods",
+    "pages/user/order/list/list",
+    "pages/user/order/show/show",
+    "pages/user/order/kdniao/kdniao",
+    "pages/user/order/comment/comment",
+    "pages/user/order/commentlist/commentlist",
+    "pages/user/usercoupon/usercoupon",
+    "pages/user/coupon/coupon",
+    "pages/user/usecoupon/usecoupon",
+    "pages/page/about/about",
+    "pages/product/list/list",
+    "pages/product/show/show",
+    "pages/product/cate/cate",
+    "pages/news/list/list",
+    "pages/news/show/show",
+    "pages/release/index",
+    "pages/roomy/index",
+    "pages/like/index",
+    "pages/step1/index",
+    "pages/step2/index",
+    "pages/step3/index",
+    "pages/step4/index",
+    "pages/desc/index",
+    "pages/city/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "梧居租房",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#FFCF54",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "房源",
+        "iconPath": "assets/images/tab/shouye.png",
+        "selectedIconPath": "assets/images/tab/shouye-actived.png"
+      },
+      {
+        "pagePath": "pages/roomy/index",
+        "text": "求租",
+        "iconPath": "assets/images/tab/qiuzu.png",
+        "selectedIconPath": "assets/images/tab/qiuzu-actived.png"
+      },
+      {
+        "pagePath": "pages/release/index",
+        "text": "发布",
+        "iconPath": "assets/images/tab/fabu-actived.png",
+        "selectedIconPath": "assets/images/tab/fabu-actived.png"
+      },
+      {
+        "pagePath": "pages/like/index",
+        "text": "收藏",
+        "iconPath": "assets/images/tab/shoucang.png",
+        "selectedIconPath": "assets/images/tab/shoucang-actived.png"
+      },
+      {
+        "pagePath": "pages/user/member/member",
+        "text": "我的",
+        "iconPath": "assets/images/tab/wode.png",
+        "selectedIconPath": "assets/images/tab/wode-actived.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

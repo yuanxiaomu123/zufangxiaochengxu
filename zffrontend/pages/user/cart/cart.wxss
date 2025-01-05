@@ -1,0 +1,305 @@
+Page {
+  background: #fff;
+  width: 100%;
+  font-size: 16px;
+}
+.titles {
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 42px;
+    padding-left: 15px;
+    font-size: 15px;
+}
+.top {
+    background: #fff;
+    margin-top: 14px;
+}
+
+.cart-bg {
+    text-align: center;
+    height: 110px;
+    line-height: 110px;
+    margin-top: 12px;
+}
+.cart-bg .iconfont {
+    font-size: 80px;
+    color: #999;
+}
+
+.cart-title {
+    color: #999;
+    text-align: center;
+    font-size: 14px;
+    line-height: 50px;
+}
+.link-home {
+    display: block;
+    background-color:#0092d8;
+    margin: 10px 20px;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+}
+.cart-list .list {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 10px 6px;
+    display: flex;
+	flex-wrap: nowrap;
+    align-items:center; 
+}
+.cart-list navigator image {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    margin-right: 7px;
+}
+.text-cont {
+    line-height: 22px;
+    flex: 1;
+}
+.text-cont .title {
+    font-size: 14px;
+    padding-right: 40px;
+}
+.text-cont .price {
+    color: #ff4a00;
+    font-size: 15px;
+    flex: 1;
+}
+.attrs text {
+    padding-right: 8px;
+    color: #888;
+}
+.cart-list .remove {
+    position: absolute;
+    right: 12px;
+    display: block;
+    top: 10px;
+    width: 26px;
+    height: 26px;
+    font-size: 22px;
+    color: #999;
+}
+
+.add-address {
+    display: block;
+    padding-left: 15px;
+    color: #999;
+    line-height: 44px;
+}
+
+.address-list {
+    line-height: 26px;
+    padding: 5px 10px;
+}
+.address-list .tel {
+    padding-left: 10px;
+}
+.orders {
+    padding-bottom: 15px;
+}
+.orders .titles {
+    margin-bottom: 15px;
+}
+.orders-cont {
+    display: flex;
+	flex-wrap: nowrap;
+    align-items:center;
+    padding: 0 10px;
+    line-height: 26px;
+}
+.orders-cont .num {
+    width: 50%;
+    text-align: left;
+}
+.orders-cont .price {
+    width: 50%;
+    text-align: right;
+}
+.orders-cont .num text,
+.orders-cont .price text {
+    color: red;
+    padding: 5px;
+}
+
+.buy-now {
+    background: #0092d8;
+    border-radius: 0;
+    color: #fff;
+    height: 48px;
+    line-height: 48px;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+}
+
+.cart-cont {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 5px;
+}
+.cart-cont .tip {
+    color: red;
+}
+.button-num {
+    margin-right: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+}
+.button-num .button {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    line-height: 24px;
+    border: none;
+    background: none;
+    border-radius: 0;
+    font-weight: bold;
+}
+.button-num .button::after {
+    border: none;
+}
+.button-num .quantity,
+.button-num .quantity-txt {
+    width: 40px;
+    border: none;
+    border-left: 1px solid #d6d6d6;
+    border-right: 1px solid #d6d6d6;
+    text-align: center;
+}
+
+.stock-fixed-bg {
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+}
+.stock-fixed {
+    position: fixed;
+    z-index: 999;
+    top: 100px;
+    width: 280px;
+    left: 50%;
+    margin-left: -140px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    justify-content:center;
+}
+.stock-fixed .txt {
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+}
+
+#fixed-num {
+    width: 160px;
+    margin: 0 auto;
+}
+#fixed-num .button {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: block;
+}
+#fixed-num .quantity {
+    text-align: center;
+    line-height: 36px;
+    height: 36px;
+    padding: 0 10px;
+}
+
+.operating {
+    border-top: 1px solid #e3e5e9;
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: 14px;
+}
+.operating text {
+    width: 50%;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+}
+.operating .determine {
+    background: #ff6600;
+    color: #FFF;
+}
+
+.integral {
+    padding: 0 10px;
+    line-height: 46px;
+    position: relative;
+}
+.integral wx-navigator {
+    display: inline;
+}
+.integral .txt {
+    font-size: 14px;
+    padding-right: 12px;
+}
+
+.integral-switch {
+    text-align: right;
+    position: absolute;
+    right: 3px;
+    top: 0;
+}
+.integral-txt {
+    color: #f90;
+    padding-right: 5px;
+}
+.switch {
+    font-size: 12px;
+    color: #888;
+}
+.coupon-text {
+    color:#f90;
+    position:absolute;
+    right:10px;
+    top:1px;
+}
+.coupon {
+    padding: 10px;
+}
+.coupon wx-navigator {
+    color: #777;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+}
+.coupon .icon-coupon {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+}
+.coupon-notice {
+    display: inline;
+    margin-left: 10px;
+    padding: 3px 8px;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    border-radius: 3px;
+}
+.coupon-sub-price {
+    position: absolute;
+    right: 30px;
+    top: 3px;
+    color: #666;
+}

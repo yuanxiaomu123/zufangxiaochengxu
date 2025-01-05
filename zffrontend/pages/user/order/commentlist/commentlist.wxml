@@ -1,0 +1,40 @@
+<view class="container" id="wrap">
+    <view class="comment" wx:if="{{showOn}}">
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="updateList" bindscroll="scroll">
+            <block wx:for="{{commentList}}" wx:for-item="val" wx:key="id">
+                <view class="comment-list">
+                    <view class="comment-head">
+                        <image src="{{val.img}}"></image>
+                    </view>
+                    <view class="comment-content">
+                        <view class="comment-user">
+                            <text class="user-name">{{val.name}}</text>
+                            <text class="iconfont icon-shoucang1 {{change[1]}}"></text>
+                            <text wx:if="{{val.stars >= 2}}" class="iconfont icon-shoucang1"></text>
+                            <text wx:if="{{val.stars >= 3}}" class="iconfont icon-shoucang1"></text>
+                            <text wx:if="{{val.stars >= 4}}" class="iconfont icon-shoucang1"></text>
+                            <text wx:if="{{val.stars >= 5}}" class="iconfont icon-shoucang1"></text>
+                        </view>
+                        <view class="comment-time">
+                            {{val.message_time}}
+                        </view>
+                        <view class="comment-text">
+                            {{val.message_content}}
+                        </view>
+                        <view wx:if="{{val.recovery_content.length > 0}}">
+                            <view class="recovery-head">
+                                <text class="recovery-title">商家回复</text>
+                                <text class="recovery-time">{{val.recovery_time}}</text>
+                            </view>
+                            <view class="comment-text">
+                                {{val.recovery_content}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view wx:if="{{!hasMore}}" class="noData"><text>没有更多内容了</text></view>
+        </scroll-view>
+    </view>
+</view>
+

@@ -1,0 +1,29 @@
+<view class="publish-page">
+    <form reportSubmit bindsubmit="formSubmit" class="publish-form">
+        <view class="section-title">
+            <text>房源标题</text>
+            <text class="desc">（非必填）</text>
+        </view>
+        <view class="input-wrapper">
+            <input class="input-box has-value" maxlength="20" name="title" placeholder="简述下房子特点吧~" placeholderStyle="color:#646464;" value="{{title}}"></input>
+        </view>
+        <view class="section-title" style="margin-top: 40rpx;">
+      房源描述<text class="desc">（非必填）</text>
+        </view>
+        <view bindtap="inputDesc" class="textarea-wrapper">
+            <text class="has-value" wx:if="{{houseDesc}}">{{houseDesc}}</text>
+            <text wx:if="{{!houseDesc}}">走心的文案将大大提高租房效率，请详细描述房源、室友、宠物等情况~</text>
+        </view>
+        <view class="section-title" style="margin-top: 40rpx;">
+      房源特色<text class="desc">（可多选）</text>
+        </view>
+        <view class="tag-list">
+            <view bindtap="toggleTag" class="tag-item {{item.selected?'active':''}}" data-tag="{{item.name}}" wx:for="{{houseTags}}" wx:key="{{index}}">
+        {{item.name}}
+      </view>
+        </view>
+        <view class="common-footer">
+            <button class="common-btn" formType="submit">发布</button>
+        </view>
+    </form>
+</view>
